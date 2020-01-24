@@ -14,13 +14,12 @@
 
 .header {
     height: 60px;
-    width: 100.8%;
 }
 
 .logo {
-    position: absolute;
-    /* width: 55%; */
-    height: 45px;
+    /* position: absolute; */
+    width: 55%;
+    /* height: 40px; */
 }
 
 .logo_empresas {
@@ -43,6 +42,15 @@
 
 .logo_empresa {
     height: 70px;
+}
+
+.submenu {
+    width: 300px;
+    color: #FFFFFF;
+}
+
+.submenu a {
+    color: #FFFFFF;
 }
 
 /* INICIO CSS MENU */

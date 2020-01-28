@@ -1,4 +1,10 @@
 
+//CARREGAR LOAD
+$(window).load(function() {
+	// Animate loader off screen
+	$(".se-pre-con").fadeOut("slow");;
+});
+
 //FUNÇÃO VOLTAR PÁGINA
 function Voltar() {
 	window.open(document.referrer,'_self');

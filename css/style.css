@@ -27,8 +27,7 @@
 }
 
 .corpo {
-    width: 100.8%;
-    height: 93.6vh;
+    margin-top: 60px;
 }
 
 .cont {
@@ -103,4 +102,19 @@
     margin-left: -250px;
 }
 /*FIM CSS MENU */
+
+/*INICIO CSS LOAD*/
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url(../img/loader/Preloader_2.gif) center no-repeat rgba(0, 0, 0, .25);
+}
+/*INICIO CSS LOAD*/
+
 

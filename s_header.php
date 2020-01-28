@@ -11,7 +11,8 @@
     <title>Document</title>
 </head>
 <body>
-<nav class="navbar navbar-dark navbar-expand-lg bg-primary header">
+<div class="se-pre-con"></div>
+<nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-primary header">
     <a class="navbar-brand" href="#">
         <img src="img/logo-newpet-branco.png" class="d-inline-block align-middle" alt="Logo NewPet">
     </a>
@@ -37,6 +38,16 @@
                     <a href="#" class="dropdown-item pt-2 pb-2"><i class="fas fa-users-cog mr-1"></i> Usuários</a>
                 </div>
             </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fab fa-whmcs"></i> Sistema
+                </a>
+                <div class="dropdown-menu mt-2 bg-dark submenu" aria-labelledby="navbarDropdown">
+                    <a href="#" class="dropdown-item pt-2 pb-2"><i class="fas fa-user-tie mr-1"></i> Planos</a>
+                    <a href="#" class="dropdown-item pt-2 pb-2"><i class="fas fa-chart-bar mr-1"></i> Relatórios</a>
+                    <a href="#" class="dropdown-item pt-2 pb-2"><i class="fas fa-users-cog mr-1"></i> Usuários do Sistema</a>
+                </div>
+            </li>
         </ul>
         <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
             <li class="nav-item dropdown ">
@@ -54,4 +65,4 @@
         </a>
     </div>
 </nav>
-<div class="row corpo">
+<div class="row p-3 corpo">

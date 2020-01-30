@@ -11,11 +11,13 @@
     <title>Document</title>
 </head>
 <body>
-<div class="se-pre-con"></div>
+<!-- <div class="se-pre-con"></div> -->
 <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-primary header">
+    <!-- <a class="logo" href="#">SISTEMA NEWPET</a> -->
     <a class="navbar-brand" href="#">
-        <img src="img/logo-newpet-branco.png" class="d-inline-block align-middle" alt="Logo NewPet">
+        <img src="img/logo-newpet-branco.png" class="d-inline-block align-middle logo_empresas" alt="Logo NewPet">
     </a>
+    
     <div class="collapse navbar-collapse navbar-expand-lg" id="conteudoNavbarSuportado">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item ">
@@ -61,7 +63,7 @@
             </li>
         </ul>
         <a class="navbar-brand" href="#">
-            <img src="img/logo-newpet-branco.png" class="d-inline-block align-middle" alt="Logo NewPet">
+            <img src="img/sem_logo.png" class="d-inline-block align-middle logo_empresas" alt="Logo NewPet">
         </a>
     </div>
 </nav>

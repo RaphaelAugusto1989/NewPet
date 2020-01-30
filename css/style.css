@@ -16,14 +16,26 @@
     height: 60px;
 }
 
-.logo {
+/* .logo {
     /* position: absolute; */
-    width: 55%;
+    /* width: 55%; */
     /* height: 40px; */
+/* } */ 
+
+.logo {
+    background: url('../img/logo-newpet-branco.png') left top no-repeat;
+    background-size: 95%;
+    display: block;
+    text-indent: -9999px;
+    width: 100px;
+    height: 40px;
 }
 
 .logo_empresas {
-    width: 50%;
+    display: block;
+    text-indent: -9999px;
+    width: 100px;
+    height: 40px;
 }
 
 .corpo {

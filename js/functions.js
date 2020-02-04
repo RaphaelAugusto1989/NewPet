@@ -10,6 +10,10 @@ function Voltar() {
 	window.open(document.referrer,'_self');
 }
 
+$( function() {
+    $( "input" ).checkboxradio();
+});
+
 //FUNÇÃO OCULTAR E EXIBIR SENHA
 $(document).ready(function(){
 	$('#showPassword').on('click', function(){
@@ -80,17 +84,17 @@ jQuery(function($){
     });
  });
 
- //FUNÇÃO MASCARA PARA FORMULARIO
- $(document).ready(function(){
-    $(".cpf").mask("999.999.999-99");
-    $(".cnpj").mask("99.999.999/9999-99");
-	$(".fixo").mask("(99) 9999-9999");
-	$(".cel").mask("(99) 99999-9999");
-	$(".moeda").mask("#.##0,00", {reverse: true});
-	$(".hora").mask("99:99");
-	$(".data").mask("99/99/9999");
-	$(".cep").mask("99.999-999");
-})
+//  //FUNÇÃO MASCARA PARA FORMULARIO
+//  $(document).ready(function(){
+//     $(".cpf").mask("999.999.999-99");
+//     $(".cnpj").mask("99.999.999/9999-99");
+// 	$(".fixo").mask("(99) 9999-9999");
+// 	$(".cel").mask("(99) 99999-9999");
+// 	$(".moeda").mask("#.##0,00", {reverse: true});
+// 	$(".hora").mask("99:99");
+// 	$(".data").mask("99/99/9999");
+// 	$(".cep").mask("99.999-999");
+// });
 
 //FUNÇÃO MASCARA PARA FORMULARIO CPF E CNPJ NO MESMO INPUT
 $("#cpfcnpj").keydown(function(){

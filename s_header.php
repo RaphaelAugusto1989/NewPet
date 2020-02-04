@@ -67,4 +67,4 @@
         </a>
     </div>
 </nav>
-<div class="row p-3 corpo">
+<div class="row pt-3 pb-3 corpo">

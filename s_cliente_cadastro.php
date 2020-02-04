@@ -10,14 +10,11 @@
         </ul>
     </nav>
 </div>
+<div class="col-3">
+
+</div>
 <div class="col-6">
-    <h3 class="text-center">Usuários do Sistema</h3>
-    <div class="row">
-        <div class="col-lg-12 mt-4 mb-3">
-            <a href="http://" class="btn btn-success float-right"><i class="fas fa-user-plus"></i> Novo Usuário</a>
-        </div>
-    </div>
-    
+    <h3 class="text-center">Cadastrar Cliente</h3>
 </div>
 <div class="col-3"></div>
 <!-- FIM DIV CONTEÚDO -->

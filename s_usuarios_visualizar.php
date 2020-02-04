@@ -3,10 +3,10 @@
 <!-- INICIO DIV CONTEÚDO -->
 <div class="col-3 "></div>
 <div class="col-6">
-    <h3 class="text-center">Clientes Cadastrados</h3>
+    <h3 class="text-center">Usuários do Sistema</h3>
     <div class="row">
         <div class="col-lg-12 mt-4 mb-3">
-            <a href="http://" class="btn btn-success float-right"><i class="fas fa-plus mr-1"></i> Novo Cliente</a>
+            <a href="http://" class="btn btn-success float-right"><i class="fas fa-plus mr-1"></i> Novo Usuário</a>
         </div>
     </div>
     <table class="table table-striped">

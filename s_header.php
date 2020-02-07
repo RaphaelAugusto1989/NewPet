@@ -12,7 +12,7 @@
 </head>
 <body>
 <!-- <div class="se-pre-con"></div> -->
-<nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-primary header">
+<header class="navbar navbar-dark navbar-expand-lg fixed-top bg-primary header">
     <!-- <a class="logo" href="#">SISTEMA NEWPET</a> -->
     <a class="navbar-brand" href="#">
         <img src="img/logo-newpet-branco.png" class="d-inline-block align-middle logo_empresas" alt="Logo NewPet">
@@ -66,5 +66,4 @@
             <img src="img/sem_logo.png" class="d-inline-block align-middle logo_empresas" alt="Logo NewPet">
         </a>
     </div>
-</nav>
-<div class="row pt-3 pb-3 corpo">
+</header>

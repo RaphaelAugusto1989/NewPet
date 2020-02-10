@@ -65,7 +65,7 @@
             <div class="form-row">
                 <div class="col-lg-4">
                     <label for="nascimento" class="mb-0 mt-2">Data de Nascimento:</label>
-                    <input type="text" name="nascimento" class="form-control data" id="" placeholder="00/00/0000">
+                    <input type="text" name="nascimento data" class="form-control data" id="" placeholder="00/00/0000">
                 </div>
                 <div class="col-lg-8">
                     <label for="email" class="mb-0 mt-2">E-mail:</label>
@@ -92,7 +92,11 @@
                     <label class="mb-0 mt-2">CEP:</label>
                     <input type="text" name="cep" class="form-control cep" id="" placeholder="00.000-000">
                 </div>
-                <div class="col-lg-4 pt-4" style="font-size: 12px;">*Preenchimento automático.</div>
+                <div class="col-lg-4 pt-4" style="font-size: 12px;">
+                    <small id="passwordHelpInline" class="text-muted">
+                        *Preenchimento automático.
+                    </small>
+                </div>
                 <div class="col-lg-8"></div>
             </div>  
             <div class="form-row">

@@ -25,7 +25,19 @@
             }); 
         });
 
-         //FUNÇÃO MASCARA PARA FORMULARIO
+        $('#ativo').click(function() {
+            $("#ativado").toggle(this.checked);
+
+            if($("#ativo").is(':checked')){
+                $("#ativado").show();
+            } else {
+                $("#desativado").show();
+            }
+        });
+
+        
+
+        //FUNÇÃO MASCARA PARA FORMULARIO
         $(document).ready(function(){
             $(".cpf").mask("999.999.999-99");
             $(".cnpj").mask("99.999.999/9999-99");
@@ -36,5 +48,24 @@
             $(".data").mask("99/99/9999");
             $(".cep").mask("99.999-999");
         });
+        
+        //FUNÇÃO MOSTRAR CALENDÁRIO
+        $( function() {
+            $( ".data" ).datepicker({
+                dateFormat : 'dd/mm/yy',
+                // showOn: "button",
+                // buttonImage: "img/calendar.png",
+                // buttonSize: "10",
+                // buttonImageOnly: true,
+                // buttonText: "Select date"
+                dayNames: ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'],
+                dayNamesMin: ['D','S','T','Q','Q','S','S','D'],
+                dayNamesShort: ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb','Dom'],
+                monthNames: ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
+                monthNamesShort: ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'],
+                nextText: 'Próximo',
+                prevText: 'Anterior'
+            });
+        } );
     </script>
 </html>

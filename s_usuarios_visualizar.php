@@ -1,7 +1,5 @@
 <?php include "s_header.php";?>
-
 <!-- INICIO DIV CONTEÚDO -->
-<div class="pt-3 pb-3 corpo">
     <div class="row">
         <div class="col-12 pb-4">
             <h3 class="text-center">Usuários do Sistema</h3>
@@ -58,6 +56,5 @@
         </div>
         <div class="col-1"></div>
     </div>
-</div><!--FIM DIV CORPO -->
 <!-- FIM DIV CONTEÚDO -->
 <?php include "s_footer.php";?>

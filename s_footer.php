@@ -1,8 +1,10 @@
+
 <footer class="fixed-bottom bg-primary align-middle">
     <div class="text-white align-middle p-2">
         Newpet - versão 1.0.0
     </div>
 </footer>
+</div><!--FIM DIV CORPO -->
 </body>
     <script type="text/javascript" src="js/jquery.js" charset="utf-8"></script>
     <script type="text/javascript" src="js/bootstrap.js" charset="utf-8"></script>

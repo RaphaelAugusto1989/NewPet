@@ -83,6 +83,7 @@ header {
 .sidebar {
     /* min-width: 250px;
     max-width: 250px; */
+    margin: 0;
     padding-right: 0;
     min-height: calc(98.5vh - 56px);
     transition: all 0.3s;

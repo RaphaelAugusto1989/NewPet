@@ -57,7 +57,7 @@
                 </div>
             </div>
             <div class="form-row">
-                <div class="col-8">
+                <div class="col-10">
                     <label for="email" class="mb-0 mt-2">Perfil do Usuário:</label>
                     <select name="" class="form-control custom-select" id="">
                         <option selected disable> -- </option>
@@ -68,12 +68,14 @@
                         <option value=""> Personalizado</option>
                     </select>
                 </div>
-                <div class="col-4">
-                    <label class="mb-0 mt-2">Status:</label>
+                <div class="col-2">
+                    <label class="mb-0 mt-2 mb-2">Status:</label>
                     <div class="custom-control custom-switch">
                         <input type="checkbox" class="custom-control-input" id="ativo">
-                        <label class="custom-control-label" for="ativo" id="ativado" style="display: none;" >Desativar</label>
-                        <label class="custom-control-label" for="ativo" id="desativado">Ativar</label>
+                        <label class="custom-control-label" for="ativo">
+                            <span id="ativado" style="display: none;">Ativado</span>
+                            <span id="desativado">Desativado</span>
+                        </label>
                     </div>
                 </div>
             </div>

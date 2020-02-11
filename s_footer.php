@@ -19,7 +19,7 @@
     //FUNÇÃO MOSTRAR E OCULTAR DIV
         $(document).ready(function(){
             $(document).on("change", ".checkradio", function(){
-                $("#cpf, #cnpj").fadeOut();
+                $("#cpf, #cnpj").hide();
                 $("#"+$(this).attr("doc")).fadeIn();
                 
             }); 
@@ -29,9 +29,11 @@
             $("#ativado").toggle(this.checked);
 
             if($("#ativo").is(':checked')){
-                $("#ativado").show();
+                $("#ativado").fadeIn();
+                $("#desativado").hide();
             } else {
-                $("#desativado").show();
+                $("#desativado").fadeIn();
+                $("#ativado").hide();
             }
         });
 

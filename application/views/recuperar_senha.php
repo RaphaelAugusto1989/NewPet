@@ -1,4 +1,3 @@
-<?php include "header.php";?>
 <div class="container">
     <div class="row ">
         <div class="col-lg-4"></div>
@@ -6,7 +5,7 @@
             <form action="" method="POST">
                 <div class="form-row align-intems-center">
                     <div class="col-lg-12 mb-4 text-center">
-                        <img src="img/logo-newpet-azul.png" alt="Logo NewPet">
+                        <img src="<?= base_url('assets/img/logo-newpet-azul.png') ?>" alt="Logo NewPet">
                     </div>
                     <div class="col-lg-3">
                         <a href="#" onclick="Voltar()" class=""><i class="fas fa-reply"></i> Voltar </a>
@@ -45,4 +44,3 @@
         <div class="col-lg-4"></div>
     </div>
 </div>
-<?php include "footer.php";?>

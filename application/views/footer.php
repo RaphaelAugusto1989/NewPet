@@ -3,15 +3,20 @@
         Copyright ©2019 - Sistema NewPet. Todos os direitos reservados. <span class="float-right">versão 1.0.0</span>
     </div>
 </div>
-<script type="text/javascript" src="js/jquery.js" charset="utf-8"></script>
-<script type="text/javascript" src="js/bootstrap.js" charset="utf-8"></script>
-<script type="text/javascript" src="js/jquery_ui.js" charset="utf-8"></script>
-<script type="text/javascript" src="js/jquery_loading.js" charset="utf-8"></script>
-<script type="text/javascript" src="js/jquery_mask.js" charset="utf-8"></script>
-<script type="text/javascript" src="js/fontawesome_5.12.0.min.js" charset="utf-8"></script>
-<script type="text/javascript" src="js/functions.js" charset="utf-8"></script>
+<script type="text/javascript" src="<?= base_url('assets/js/jquery.js') ?>" charset="utf-8"></script>
+<script type="text/javascript" src="<?= base_url('assets/js/bootstrap.js') ?>" charset="utf-8"></script>
+<script type="text/javascript" src="<?= base_url('assets/js/jquery_ui.js') ?>" charset="utf-8"></script>
+<script type="text/javascript" src="<?= base_url('assets/js/jquery_loading.js') ?>" charset="utf-8"></script>
+<script type="text/javascript" src="<?= base_url('assets/js/jquery_mask.js') ?>" charset="utf-8"></script>
+<script type="text/javascript" src="<?= base_url('assets/js/fontawesome_5.12.0.min.js') ?>" charset="utf-8"></script>
+<script type="text/javascript" src="<?= base_url('assets/js/functions.js') ?>" charset="utf-8"></script>
 
 <script type="text/javascript">
+    //FUNÇÃO VOLTAR PÁGINA
+    function Voltar() {
+        window.open(document.referrer,'_self');
+    }
+
     //FUNÇÃO OCULTAR E EXIBIR SENHA
     $(document).ready(function(){
         $('#showPassword').on('click', function(){

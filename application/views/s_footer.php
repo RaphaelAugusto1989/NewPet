@@ -16,6 +16,11 @@
     <script type="text/javascript" src="js/functions.js" charset="utf-8"></script>
     
     <script type="text/javascript">
+    
+        //FUNÇÃO VOLTAR PÁGINA
+        function Voltar() {
+            window.open(document.referrer,'_self');
+        }
         //FUNÇÃO MOSTRAR E OCULTAR DIV CPF/CNPJ
         $(document).ready(function(){
             $(document).on("change", ".checkradio", function(){

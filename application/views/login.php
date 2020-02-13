@@ -4,7 +4,7 @@
         <div class="col-lg-4"></div>
         <div class="col-lg-4"></div>
         <div class="col-lg-4 text-center p-4 login">
-            <form action="" method="POST">
+            <form action="Newpet/AutenticaLogin" method="POST">
                 <div class="form-row align-intems-center">
                     <div class="col-lg-12 mb-4 text-left">
                         <img src="<?= base_url('assets/img/logo-newpet-azul.png');?>" alt="Logo NewPet">
@@ -37,10 +37,10 @@
                         <button type="submit" class="btn btn-outline-primary"> Entrar <i class="fas fa-sign-in-alt"></i></button>
                     </div>
                     <div class="col-lg-12 mb-1 text-left">
-                        <a href="recuperar_senha.php">Esqueceu sua senha?</a>
+                        <a href="EsqueciMinhaSenha">Esqueceu sua senha?</a>
                     </div>
                     <div class="col-lg-12 mb-1 text-left">
-                        <a href="#">Precisa de ajuda?</a>
+                        <a href="PrecisaDeAjuda">Precisa de ajuda?</a>
                     </div>
                 </div>
             </form>

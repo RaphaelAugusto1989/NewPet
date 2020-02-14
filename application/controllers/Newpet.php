@@ -55,9 +55,20 @@ class Newpet extends CI_Controller {
 				echo $login = self::mask($login, '##.###.###/####-##');
 				exit;
 			}
+		} 
+
+		$this->load->model('UsuariosController');
+		$success = $this->UsuariosController->AcessarSistema($login, $senha);
+
+		if(!empty($user)) {
+			$this->session->set_userdata('timer', time() + (60 * 1)); //1 minuto
+			$this->session->set_userdata('idUsuario', $user[0]->id_usuario);
+			$this->session->set_userdata('nome', $user[0]->nome_usuario);
+
+			redirect(site_url('Sistema'));
 		} else {
-			echo $login;
-			exit;
+			$msg = $this->session->flashdata('Error', 'Login ou Senha incorreto!');
+			redirect(site_url('index'));
 		}
 
 	}

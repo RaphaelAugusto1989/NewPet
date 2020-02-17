@@ -18,8 +18,8 @@
                             </div>
                             <input type="text" name="login" class="form-control form-control-lg border border-primary border-left-0" id="show-option" placeholder="CPF, CNPJ ou E-mail" title="Digite só os números caso for CPF ou CNPJ." required >
                         </div>
+                        <small class="form-text text-muted text-left">*Inserir CPF ou CNPJ sem pontos, traço e barra!</small>
                     </div>
-
                     <div class="col-lg-12 mb-3">
                         <div class="input-group">
                             <div class="input-group-prepend">
@@ -34,7 +34,7 @@
                         </div>
                     </div>
                     <div class="col-lg-12 mb-4 text-right">
-                        <button type="submit" class="btn btn-outline-primary"> Entrar <i class="fas fa-sign-in-alt"></i></button>
+                        <button type="submit" class="btn btn-primary"> Entrar <i class="fas fa-sign-in-alt"></i></button>
                     </div>
                     <div class="col-lg-12 mb-1 text-left">
                         <a href="EsqueciMinhaSenha">Esqueceu sua senha?</a>

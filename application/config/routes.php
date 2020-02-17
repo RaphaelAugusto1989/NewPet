@@ -53,6 +53,11 @@ $route['default_controller'] = 'Newpet';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
+//Páginas Site Newpet
 $route['EsqueciMinhaSenha'] = 'Newpet/EsqueciMinhaSenha';
 
-
+//Usuários
+$route['UsuariosCadastrados'] = 'Usuario/UsuariosCadastrados';
+$route['CadastroDeUsuario'] = 'Usuario/CadastroDeUsuario';
+$route['CadastrarEnderecoDoUsuario'] = 'Usuario/CadastrarEnderecoDoUsuario';
+$route['CadastrarAcessoDoUsuario'] = 'Usuario/CadastrarAcessoDoUsuario';

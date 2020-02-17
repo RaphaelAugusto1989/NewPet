@@ -1,4 +1,4 @@
-<?php include "s_header.php";?>
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 <div class="row">         
     <div class="col-3"></div>
     <div class="col-8 text-center">
@@ -17,9 +17,9 @@
     <div class="col-3">
         <nav class="col-12 sidebar">
             <ul class="list-unstyled">
-                <li><a href="#"><i class="fas fa-check-circle"></i> Dados Pessoais</a></li>
-                <li><a href="#"><i class="fas fa-check-circle"></i> Acesso ao Sistema</a></li>
-                <li><a href="#"><i class="fas fa-check-circle"></i> Planos</a></li>
+                <li><a href="<?= site_url('Usuario_controller/CadastroDoUsuario');?>"><i class="fas fa-check-circle"></i> Dados Pessoais</a></li>
+                <li><a href="<?= site_url('Usuario_controller/CadastrarEnderecoDoUsuario');?>"><i class="fas fa-check-circle"></i> Acesso ao Sistema</a></li>
+                <li><a href="<?= site_url('Usuario_controller/CadastrarAcessoDoUsuario');?>"><i class="fas fa-check-circle"></i> Planos</a></li>
             </ul>
         </nav>
     </div>
@@ -134,5 +134,3 @@
     </div>
     <div class="col-1 pr-0 mr-0"></div>
 </div> <!-- FIM DIV CONTEÚDO -->
-<?php include "s_footer.php";?>
-

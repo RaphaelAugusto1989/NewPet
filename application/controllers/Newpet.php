@@ -57,7 +57,7 @@ class Newpet extends CI_Controller {
 			}
 		} 
 
-		$this->load->model('UsuariosController');
+		$this->load->model('Usuarios_model');
 		$success = $this->UsuariosController->AcessarSistema($login, $senha);
 
 		if(!empty($user)) {

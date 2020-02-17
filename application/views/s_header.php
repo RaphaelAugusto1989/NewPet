@@ -1,21 +1,22 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/jquery_ui.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/bootstrap.min.css') ?>">
+    <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/jquery_ui.css') ?>">
+    <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/style.css') ?>">
     
-    <title>Document</title>
+    <title><?= $title; ?></title>
 </head>
 <body>
 <div class="container-fluid pt-3 pb-3 corpo">  
 <header class="navbar navbar-dark navbar-expand-lg fixed-top bg-primary header">
     <!-- <a class="logo" href="#">SISTEMA NEWPET</a> -->
     <a class="navbar-brand" href="#">
-        <img src="img/logo-newpet-branco.png" class="d-inline-block align-middle logo_empresas" alt="Logo NewPet">
+        <img src="<?= base_url('assets/img/logo-newpet-branco.png') ?>" class="d-inline-block align-middle logo_empresas" alt="Logo NewPet">
     </a>
     <div class="collapse navbar-collapse navbar-expand-lg" id="conteudoNavbarSuportado">
         <ul class="navbar-nav mr-auto">
@@ -38,7 +39,7 @@
                     <a href="#" class="dropdown-item pt-2 pb-2"><i class="fas fa-chart-bar mr-1"></i> Relatórios</a>
                 </div>
             </li>
-            <li class="nav-item dropdown">
+            <li class="dropdown nav-item">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fab fa-whmcs"></i> Sistema
                 </a>
@@ -61,7 +62,7 @@
             </li>
         </ul>
         <a class="navbar-brand" href="#">
-            <img src="img/sem_logo.png" class="d-inline-block align-middle logo_empresas" alt="Logo NewPet">
+            <img src="<?= base_url('assets/img/sem_logo.png') ?>" class="d-inline-block align-middle logo_empresas" alt="Logo NewPet">
         </a>
     </div>
 </header>

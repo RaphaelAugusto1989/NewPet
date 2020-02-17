@@ -1,4 +1,4 @@
-<?php include "s_header.php";?>
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 <!-- INICIO DIV CONTEÚDO -->
     <div class="row">
         <div class="col-12 pb-4">
@@ -10,7 +10,7 @@
         <div class="col-10">
             <div class="row mt-4 mb-3">
                 <div class="col-lg-7 ">
-                    <a href="http://" class="btn btn-success"><i class="fas fa-plus mr-1"></i> Novo Usuário</a>
+                    <a href="<?= site_url('Usuario/CadastroDeUsuario')?>" class="btn btn-success"><i class="fas fa-plus mr-1"></i> Novo Usuário</a>
                 </div>
                 <div class="col-lg-5">
                     <form action="" method="post">
@@ -57,4 +57,3 @@
         <div class="col-1"></div>
     </div>
 <!-- FIM DIV CONTEÚDO -->
-<?php include "s_footer.php";?>

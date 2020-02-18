@@ -26,30 +26,43 @@
             <table class="table table-striped table-hover">
                 <thead>
                     <tr>
-                    <th scope="col">NOME</th>
-                    <th scope="col">CPF/CNPJ</th>
-                    <th scope="col">EMAIL</th>
-                    <th scope="col">TELEFONE</th>
+                        <th class="col-3">NOME</th>
+                        <th class="col-2">CPF/CNPJ</th>
+                        <th class="col-3">EMAIL</th>
+                        <th class="col-2">TELEFONE</th>
+                        <th class="col-2">AÇÕES</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                    <td>Mark</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
+                        <td class="col-3">Raphael Augusto</td>
+                        <td class="col-2">023.486.491-52</td>
+                        <td class="col-3">raphael.a.a.p@gmail.com</td>
+                        <td class="col-2">(61) 98221-6572</td>
+                        <td class="col-2">
+                            <a href="#" class="btn btn-outline-warning" title="ALTERAR"><i class="far fa-file-alt"></i></a>
+                            <a href="#" class="btn btn-outline-danger" title="EXCLUIR"><i class="fas fa-trash-alt"></i></a>
+                        </td>
                     </tr>
                     <tr>
-                    <td>Mark</td>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
+                        <td>Star Petshop</td>
+                        <td>23.123.456/0001-52</td>
+                        <td>starpet@gmail.com</td>
+                        <td>(61) 3352-5222</td>
+                        <td>
+                            <a href="#" class="btn btn-outline-warning" title="ALTERAR"><i class="far fa-file-alt"></i></a>
+                            <a href="#" class="btn btn-outline-danger" title="EXCLUIR"><i class="fas fa-trash-alt"></i></a>
+                        </td>
                     </tr>
                     <tr>
-                    <td>Mark</td>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
+                        <td>Clinic Pet</td>
+                        <td>23.547.112/0001-55</td>
+                        <td>clinicpet@hotmail.com</td>
+                        <td>(61) 3022-5541</td>
+                        <td>
+                            <a href="#" class="btn btn-outline-warning" title="ALTERAR"><i class="far fa-file-alt"></i></a>
+                            <a href="#" class="btn btn-outline-danger" title="EXCLUIR"><i class="fas fa-trash-alt"></i></a>
+                        </td>
                     </tr>
                 </tbody>
             </table>

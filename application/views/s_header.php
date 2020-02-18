@@ -24,7 +24,7 @@
                 <a class="nav-link text-white" href="#"><i class="fas fa-home"></i> Home</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="<?= site_url('Newpet/Home');?>" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fas fa-bars"></i> Menu
                 </a>
                 <div class="dropdown-menu mt-2 bg-dark submenu" aria-labelledby="navbarDropdown">
@@ -46,7 +46,7 @@
                 <div class="dropdown-menu mt-2 bg-dark submenu" aria-labelledby="navbarDropdown">
                     <a href="#" class="dropdown-item pt-2 pb-2"><i class="fas fa-user-tie mr-1"></i> Planos</a>
                     <a href="#" class="dropdown-item pt-2 pb-2"><i class="fas fa-chart-bar mr-1"></i> Relatórios</a>
-                    <a href="#" class="dropdown-item pt-2 pb-2"><i class="fas fa-users-cog mr-1"></i> Usuários do Sistema</a>
+                    <a href="<?= site_url('Usuario/UsuariosCadastrados');?>" class="dropdown-item pt-2 pb-2"><i class="fas fa-users-cog mr-1"></i> Usuários do Sistema</a>
                 </div>
             </li>
         </ul>

@@ -55,23 +55,7 @@ class Usuario extends CI_Controller {
 		$this->load->view('s_footer');
     }
     
-    //PÁGINA DE CADASTRO DO USUÁRIO DO SISTEMA
-	public function CadastrarEnderecoDoUsuario() {
-		$msg = null;
-		if ($this->session->flashdata('Success') !="") {
-			$msg = $this->session->flashdata('Success');
-		} else {
-			$msg = $this->session->flashdata('Error');
-		}
-
-		$dados = array('title' => 'Cadastrar Endereço do Usuário - Sistema de Petshop e Clínica Veterinária', 'msg' => $msg);
-
-		$this->load->view('s_header', $dados);
-		$this->load->view('s_usuario_cadastro_endereco', $dados);
-		$this->load->view('s_footer');
-    }
-    
-    //PÁGINA DE CADASTRO DO USUÁRIO DO SISTEMA
+    //PÁGINA DE CADASTRO DE ACESSO AO SISTEMA DO USUÁRIO
 	public function CadastrarAcessoDoUsuario() {
 		$msg = null;
 		if ($this->session->flashdata('Success') !="") {
@@ -84,6 +68,22 @@ class Usuario extends CI_Controller {
 
 		$this->load->view('s_header', $dados);
 		$this->load->view('s_usuario_cadastro_acesso', $dados);
+		$this->load->view('s_footer');
+    }
+    
+    //PÁGINA DOS PLANOS DO SISTEMA DO USUÁRIO
+	public function PlanoDoUsuario() {
+		$msg = null;
+		if ($this->session->flashdata('Success') !="") {
+			$msg = $this->session->flashdata('Success');
+		} else {
+			$msg = $this->session->flashdata('Error');
+		}
+
+		$dados = array('title' => 'Plano do Usuário - Sistema de Petshop e Clínica Veterinária', 'msg' => $msg);
+
+		$this->load->view('s_header', $dados);
+		$this->load->view('s_usuario_planos', $dados);
 		$this->load->view('s_footer');
 	}
 }

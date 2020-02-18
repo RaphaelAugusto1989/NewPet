@@ -17,9 +17,9 @@
     <div class="col-3">
         <nav class="col-12 sidebar">
             <ul class="list-unstyled">
-                <li><a href="#"><i class="fas fa-check-circle"></i> Dados Pessoais</a></li>
-                <li><a href="#"><i class="fas fa-check-circle"></i> Acesso ao Sistema</a></li>
-                <li><a href="#"><i class="fas fa-check-circle"></i> Planos</a></li>
+                <li><a href="<?= site_url('Usuario/CadastroDeUsuario');?>"><i class="fas fa-check-circle"></i> Dados Pessoais</a></li>
+                <li><a href="<?= site_url('Usuario/CadastrarAcessoDoUsuario');?>"><i class="fas fa-check-circle"></i> Acesso ao Sistema</a></li>
+                <li><a href="<?= site_url('Usuario/PlanoDoUsuario');?>"><i class="fas fa-check-circle"></i> Planos</a></li>
             </ul>
         </nav>
     </div>

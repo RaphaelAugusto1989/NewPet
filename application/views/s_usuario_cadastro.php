@@ -17,9 +17,9 @@
     <div class="col-3">
         <nav class="col-12 sidebar">
             <ul class="list-unstyled">
-                <li><a href="<?= site_url('Usuario_controller/CadastroDoUsuario');?>"><i class="fas fa-check-circle"></i> Dados Pessoais</a></li>
-                <li><a href="<?= site_url('Usuario_controller/CadastrarEnderecoDoUsuario');?>"><i class="fas fa-check-circle"></i> Acesso ao Sistema</a></li>
-                <li><a href="<?= site_url('Usuario_controller/CadastrarAcessoDoUsuario');?>"><i class="fas fa-check-circle"></i> Planos</a></li>
+                <li><a href="<?= site_url('Usuario/CadastroDeUsuario');?>"><i class="fas fa-check-circle"></i> Dados Pessoais</a></li>
+                <li><a href="<?= site_url('Usuario/CadastrarAcessoDoUsuario');?>"><i class="fas fa-check-circle"></i> Acesso ao Sistema</a></li>
+                <li><a href="<?= site_url('Usuario/PlanoDoUsuario');?>"><i class="fas fa-check-circle"></i> Planos</a></li>
             </ul>
         </nav>
     </div>
@@ -50,7 +50,7 @@
                     <label for="cpfcnpj" class="mb-0 mt-2">CPF:</label>
                     <input type="text" name="cpforcnpj" class="form-control cpf" id="" placeholder="000.000.000-00">
                 </div>
-                <div class="col-lg-4" id="cnpj" style="display: none;" >
+                <div class="col-lg-4" id="cnpj" style="display: none;">
                     <label for="cpfcnpj" class="mb-0 mt-2">CNPJ:</label>
                     <input type="text" name="cpforcnpj" class="form-control cnpj" id=""  placeholder="00.000.000/0000-00">
                 </div>
@@ -60,6 +60,12 @@
                 <div class="col-lg-12">
                     <label for="" class="mb-0 mt-2">Nome do Usuário ou Empresa:</label>
                     <input type="text" name="" class="form-control" id="" placeholder="Nome do usuário ou nome da empresa">
+                </div>
+            </div>
+            <div class="form-row" id="cnpj" style="display: none;">
+                <div class="col-lg-12">
+                    <label for="" class="mb-0 mt-2">Responsável da Empresa:</label>
+                    <input type="text" name="" class="form-control" id="" placeholder="Nome do Responsável da Empresa:">
                 </div>
             </div>
             <div class="form-row">

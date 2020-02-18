@@ -16,7 +16,7 @@
                                     <i class="fas fa-user"></i>
                                 </div>
                             </div>
-                            <input type="text" name="login" class="form-control form-control-lg border border-primary border-left-0" id="show-option" placeholder="CPF, CNPJ ou E-mail" title="Digite só os números caso for CPF ou CNPJ." required >
+                            <input type="text" name="login" class="form-control form-control-lg border border-primary border-left-0" id="show-option" placeholder="CPF, CNPJ, Login ou E-mail" title="Digite só os números caso for CPF ou CNPJ." required >
                         </div>
                         <small class="form-text text-muted text-left">*Inserir CPF ou CNPJ sem pontos, traço e barra!</small>
                     </div>

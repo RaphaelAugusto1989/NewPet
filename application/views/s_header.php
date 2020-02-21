@@ -29,7 +29,7 @@
                 </a>
                 <div class="dropdown-menu mt-2 bg-dark submenu" aria-labelledby="navbarDropdown">
                     <a href="#" class="dropdown-item pt-2 pb-2"><i class="fas fa-calendar-alt mr-1"></i> Agendamentos</a>
-                    <a href="#" class="dropdown-item pt-2 pb-2"><i class="fas fa-users mr-1"></i> Clientes</a>
+                    <a href="<?= site_url('Cliente/ClientesCadastrados');?>" class="dropdown-item pt-2 pb-2"><i class="fas fa-users mr-1"></i> Clientes</a>
                     <a href="#" class="dropdown-item pt-2 pb-2"><i class="fas fa-money-check-alt mr-1"></i> Caixa</a>
                     <a href="#" class="dropdown-item pt-2 pb-2"><i class="fas fa-shopping-basket mr-1"></i> Estoque </a>
                     <a href="#" class="dropdown-item pt-2 pb-2"><i class="fas fa-truck mr-1"></i> Fornecedores</a>

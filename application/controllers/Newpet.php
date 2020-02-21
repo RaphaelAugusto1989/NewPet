@@ -90,7 +90,7 @@ class Newpet extends CI_Controller {
 	}
 
 	//PÁGINA DE RECUPERAÇÃO DE SENHA
-	public function HomenewPet() {
+	public function Home() {
 		$dados = array('title' => 'Sistema NewPet- Sistema de Petshop e Clínica Veterinária', 'msg' => $msg);
 
 		$this->load->view('s_header', $dados);

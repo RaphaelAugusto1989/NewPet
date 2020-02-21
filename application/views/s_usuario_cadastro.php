@@ -45,39 +45,62 @@
                 </div>
                 <div class="col-lg-9"></div>
             </div>
-            <div class="form-row">
-                <div class="col-lg-4" id="cpf">
-                    <label for="cpfcnpj" class="mb-0 mt-2">CPF:</label>
-                    <input type="text" name="cpforcnpj" class="form-control cpf" id="" placeholder="000.000.000-00">
+            <!-- INICIO DIV CAMPOS CPF -->
+            <div id="cpf"> 
+                <div class="form-row">
+                    <div class="col-lg-4">
+                        <label for="cpfcnpj" class="mb-0 mt-2">CPF:</label>
+                        <input type="text" name="cpforcnpj" class="form-control cpf" id="" placeholder="000.000.000-00">
+                    </div>
+                    <div class="col-lg-8"></div>
+                </div> 
+                <div class="form-row">
+                    <div class="col-lg-12">
+                        <label for="" class="mb-0 mt-2">Nome Completo:</label>
+                        <input type="text" name="" class="form-control" id="" placeholder="Nome do usuário ou nome da empresa">
+                    </div>
                 </div>
-                <div class="col-lg-4" id="cnpj" style="display: none;">
-                    <label for="cpfcnpj" class="mb-0 mt-2">CNPJ:</label>
-                    <input type="text" name="cpforcnpj" class="form-control cnpj" id=""  placeholder="00.000.000/0000-00">
-                </div>
-                <div class="col-lg-8"></div>
-            </div>  
-            <div class="form-row">
-                <div class="col-lg-12">
-                    <label for="" class="mb-0 mt-2">Nome do Usuário ou Empresa:</label>
-                    <input type="text" name="" class="form-control" id="" placeholder="Nome do usuário ou nome da empresa">
+                <div class="form-row">
+                    <div class="col-lg-4">
+                        <label for="nascimento" class="mb-0 mt-2">Data de Nascimento:</label>
+                        <input type="text" name="nascimento data" class="form-control data" id="" placeholder="00/00/0000">
+                    </div>
+                    <div class="col-lg-8">
+                        <label for="email" class="mb-0 mt-2">E-mail:</label>
+                        <input type="email" name="email" class="form-control" id="" placeholder="E-mail de contato">
+                    </div>
+                </div> 
+            </div>
+            <!-- FIM DIV CAMPOS CPF -->
+            <!-- INICIO DIV CAMPOS CNPJ -->
+            <div  id="cnpj" style="display: none;">
+                <div class="form-row">
+                    <div class="col-lg-4">
+                        <label for="cpfcnpj" class="mb-0 mt-2">CNPJ:</label>
+                        <input type="text" name="cpforcnpj" class="form-control cnpj" id=""  placeholder="00.000.000/0000-00">
+                    </div>
+                    <div class="col-lg-8"></div>
+                </div> 
+                <div class="form-row">
+                    <div class="col-lg-12">
+                        <label for="" class="mb-0 mt-2">Nome da Empresa:</label>
+                        <input type="text" name="" class="form-control" id="" placeholder="Nome da empresa">
+                    </div>
+                </div> 
+                <div class="form-row">
+                    <div class="col-lg-12">
+                        <label for="" class="mb-0 mt-2">Responsável:</label>
+                        <input type="text" name="" class="form-control" id="" placeholder="Nome do Responsável">
+                    </div>
+                </div> 
+                <div class="form-row">
+                    <div class="col-lg-12">
+                        <label for="email" class="mb-0 mt-2">E-mail:</label>
+                        <input type="email" name="email" class="form-control" id="" placeholder="E-mail de contato">
+                    </div>
                 </div>
             </div>
-            <div class="form-row" id="cnpj" style="display: none;">
-                <div class="col-lg-12">
-                    <label for="" class="mb-0 mt-2">Responsável da Empresa:</label>
-                    <input type="text" name="" class="form-control" id="" placeholder="Nome do Responsável da Empresa:">
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="col-lg-4">
-                    <label for="nascimento" class="mb-0 mt-2">Data de Nascimento:</label>
-                    <input type="text" name="nascimento data" class="form-control data" id="" placeholder="00/00/0000">
-                </div>
-                <div class="col-lg-8">
-                    <label for="email" class="mb-0 mt-2">E-mail:</label>
-                    <input type="email" name="email" class="form-control" id="" placeholder="E-mail de contato">
-                </div>
-            </div>
+            <!-- INICIO DIV CAMPOS CNPJ -->
             <div class="form-row">
                 <div class="col-lg-6">
                     <label for="fixo" class="mb-0 mt-2">Telefone Fixo:</label>
@@ -96,19 +119,17 @@
             <div class="form-row">
                 <div class="col-lg-4">
                     <label class="mb-0 mt-2">CEP:</label>
-                    <input type="text" name="cep" class="form-control cep" id="" placeholder="00.000-000">
-                </div>
-                <div class="col-lg-4 pt-4" style="font-size: 12px;">
-                    <small id="passwordHelpInline" class="text-muted">
-                        *Preenchimento automático.
-                    </small>
+                    <input type="text" name="cep" class="form-control cep" id="cep" placeholder="00.000-000">
                 </div>
                 <div class="col-lg-8"></div>
-            </div>  
+            </div> 
+            <small id="passwordHelpInline" class="text-muted">
+                *Digite o CEP e ao sair do campo o endereço será preenchido automáticamente. Pode utilizar a tecla TAB após digitar o CEP.
+            </small> 
             <div class="form-row">
                 <div class="col-lg-12">
                     <label for="" class="mb-0 mt-2">Rua:</label>
-                    <input type="text" name="rua" class="form-control" id="" placeholder="Rua">
+                    <input type="text" name="rua" class="form-control" id="rua" placeholder="Rua">
                 </div>
             </div>
             <div class="form-row">
@@ -118,17 +139,23 @@
                 </div>
                 <div class="col-lg-9">
                     <label class="mb-0 mt-2">Cidade:</label>
-                    <input type="text" name="cidade" class="form-control" id="" placeholder="Cidadae">
+                    <input type="text" name="cidade" class="form-control" id="cidade" placeholder="Cidadae">
                 </div>
             </div>
             <div class="form-row">
                 <div class="col-lg-10">
                     <label class="mb-0 mt-2">Bairro:</label>
-                    <input type="text" name="bairro" class="form-control" id="" placeholder="Bairro">
+                    <input type="text" name="bairro" class="form-control" id="bairro" placeholder="Bairro">
                 </div>
                 <div class="col-lg-2">
                     <label class="mb-0 mt-2">UF:</label>
-                    <input type="text" name="estado" class="form-control" id="" placeholder="UF">
+                    <input type="text" name="estado" class="form-control" id="uf" placeholder="UF">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-lg-12">
+                    <label for="" class="mb-0 mt-2">Complemento:</label>
+                    <input type="text" name="complemento" class="form-control" id="" placeholder="Complemento">
                 </div>
             </div>
             <div class="form-row">

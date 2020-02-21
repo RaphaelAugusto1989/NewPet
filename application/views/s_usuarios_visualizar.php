@@ -26,20 +26,20 @@
             <table class="table table-striped table-hover">
                 <thead>
                     <tr>
-                        <th class="col-3">NOME</th>
-                        <th class="col-2">CPF/CNPJ</th>
-                        <th class="col-3">EMAIL</th>
-                        <th class="col-2">TELEFONE</th>
-                        <th class="col-2">AÇÕES</th>
+                        <th style="width: 35%;">NOME/EMPRESA</th>
+                        <th style="width: 15%;">CPF/CNPJ</th>
+                        <th style="width: 25%;">EMAIL</th>
+                        <th style="width: 15%;">TELEFONE</th>
+                        <th style="width: 10%;" class="text-center">AÇÕES</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="col-3">Raphael Augusto</td>
-                        <td class="col-2">023.486.491-52</td>
-                        <td class="col-3">raphael.a.a.p@gmail.com</td>
-                        <td class="col-2">(61) 98221-6572</td>
-                        <td class="col-2">
+                        <td>Raphael Augusto Almeida Pereira</td>
+                        <td>023.486.491-52</td>
+                        <td>raphael.a.a.p@gmail.com</td>
+                        <td>(61) 98221-6572</td>
+                        <td>
                             <a href="#" class="btn btn-outline-warning" title="ALTERAR"><i class="far fa-file-alt"></i></a>
                             <a href="#" class="btn btn-outline-danger" title="EXCLUIR"><i class="fas fa-trash-alt"></i></a>
                         </td>

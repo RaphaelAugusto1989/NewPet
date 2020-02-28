@@ -64,3 +64,7 @@ $route['UsuariosCadastrados'] = 'Usuario/UsuariosCadastrados';
 $route['CadastroDeUsuario'] = 'Usuario/CadastroDeUsuario';
 $route['CadastrarEnderecoDoUsuario'] = 'Usuario/CadastrarEnderecoDoUsuario';
 $route['PlanoDoUsuario'] = 'Usuario/PlanoDoUsuario';
+
+//PRODUTOS
+$route['ProdutosCadastrados'] = 'Produto/ProdutosCadastrados';
+$route['CadastraProduto'] = 'Produto/CadastraProduto';

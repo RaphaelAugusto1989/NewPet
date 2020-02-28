@@ -10,7 +10,7 @@
         <div class="col-10">
             <div class="row mt-4 mb-3">
                 <div class="col-5 ">
-                    <a href="<?= site_url('Cliente/CadastroDeCliente')?>" class="btn btn-success"><i class="fas fa-plus mr-1"></i> Novo Cliente</a>
+                    <a href="<?= site_url('Cliente/CadastraCliente')?>" class="btn btn-success"><i class="fas fa-plus mr-1"></i> Novo Cliente</a>
                 </div>
                 <div class="col-lg-7">
                     <form action="" method="post">
@@ -48,7 +48,7 @@
                         <td>Melissa</td>
                         <td>raphael.a.a.p@gmail.com</td>
                         <td>(61) 98221-6572</td>
-                        <td>
+                        <td class="text-center">
                             <a href="#" class="btn btn-outline-warning" title="ALTERAR"><i class="far fa-file-alt"></i></a>
                             <a href="#" class="btn btn-outline-danger" title="EXCLUIR"><i class="fas fa-trash-alt"></i></a>
                         </td>
@@ -58,7 +58,7 @@
                         <td>23.123.456/0001-52</td>
                         <td>starpet@gmail.com</td>
                         <td>(61) 3352-5222</td>
-                        <td>
+                        <td class="text-center">
                             <a href="#" class="btn btn-outline-warning" title="ALTERAR"><i class="far fa-file-alt"></i></a>
                             <a href="#" class="btn btn-outline-danger" title="EXCLUIR"><i class="fas fa-trash-alt"></i></a>
                         </td>
@@ -68,7 +68,7 @@
                         <td>23.547.112/0001-55</td>
                         <td>clinicpet@hotmail.com</td>
                         <td>(61) 3022-5541</td>
-                        <td>
+                        <td class="text-center">
                             <a href="#" class="btn btn-outline-warning" title="ALTERAR"><i class="far fa-file-alt"></i></a>
                             <a href="#" class="btn btn-outline-danger" title="EXCLUIR"><i class="fas fa-trash-alt"></i></a>
                         </td>

@@ -135,7 +135,7 @@
             <div class="form-row">
                 <div class="col-lg-3">
                     <label class="mb-0 mt-2">Número:</label>
-                    <input type="text" name="numero" class="form-control" id="" placeholder="">
+                    <input type="text" name="numero" class="form-control" id="" placeholder="" onkeypress="return somenteNumeros(event)">
                 </div>
                 <div class="col-lg-9">
                     <label class="mb-0 mt-2">Cidade:</label>
@@ -159,8 +159,13 @@
                 </div>
             </div>
             <div class="form-row">
-                <div class="col-lg-12 mt-3 mb-4 pb-4 text-right">
+                <div class="col-lg-12 mt-3 mb-4 pb-4 text-right">                    
+                    <!-- SE NÃO EXISTIR DADOS CADASTRADOS, MOSTRAR BOTÃO SALVAR -->
                     <button type="submit" class="btn btn-primary padbutton"><i class="fas fa-save mr-2"></i> Salvar</button>
+                    <!-- SE EXISTIR DADOS CADASTRADOS, MOSTRAR BOTÃO ALTERAR -->
+                    <button type="submit" class="btn btn-primary padbutton"><i class="fas fa-edit mr-2"></i> Alterar</button>
+                    <!-- SE MSG FOR TRUE MOSTRAR BOTÃO PRÓXIMO -->
+                    <a href="<?= site_url('Usuario/CadastrarAcessoDoUsuario'); ?>" class="btn btn-success padbutton"> Próximo <i class="fas fa-arrow-right ml-2"></i></a>
                 </div>
             </div>
         </form>

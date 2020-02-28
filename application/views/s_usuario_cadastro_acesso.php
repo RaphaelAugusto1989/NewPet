@@ -1,4 +1,4 @@
-<?php include "s_header.php";?>
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 <div class="row">         
     <div class="col-3"></div>
     <div class="col-8 text-center">
@@ -169,12 +169,16 @@
             </div>
             <div class="form-row">
                 <div class="col-lg-12 mt-3 mb-4 pb-4 text-right">
+                    <!-- SE NÃO EXISTIR DADOS CADASTRADOS, MOSTRAR BOTÃO SALVAR -->
                     <button type="submit" class="btn btn-primary padbutton"><i class="fas fa-save mr-2"></i> Salvar</button>
+                    <!-- SE EXISTIR DADOS CADASTRADOS, MOSTRAR BOTÃO ALTERAR -->
+                    <button type="submit" class="btn btn-primary padbutton"><i class="fas fa-edit mr-2"></i> Alterar</button>
+                    <!-- SE MSG FOR TRUE MOSTRAR BOTÃO PRÓXIMO -->
+                    <a href="<?= site_url('Usuario/PlanoDoUsuario'); ?>" class="btn btn-success padbutton"> Próximo <i class="fas fa-arrow-right ml-2"></i></a>
                 </div>
             </div>
         </form>
     </div>
     <div class="col-1 pr-0 mr-0"></div>
 </div> <!-- FIM DIV CONTEÚDO -->
-<?php include "s_footer.php";?>
 

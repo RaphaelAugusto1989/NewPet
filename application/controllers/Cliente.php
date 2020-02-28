@@ -40,7 +40,7 @@ class Cliente extends CI_Controller {
 	}
 
 	//PÁGINA DE CADASTRO DO USUÁRIO DO SISTEMA
-	public function CadastroDeCliente() {
+	public function CadastraCliente() {
 		$msg = null;
 		if ($this->session->flashdata('Success') !="") {
 			$msg = $this->session->flashdata('Success');
@@ -48,15 +48,15 @@ class Cliente extends CI_Controller {
 			$msg = $this->session->flashdata('Error');
 		}
 
-		$dados = array('title' => 'Cadastro de Usuário - Sistema de Petshop e Clínica Veterinária', 'msg' => $msg);
+		$dados = array('title' => 'Cadastrar Cliente - Sistema de Petshop e Clínica Veterinária', 'msg' => $msg);
 
 		$this->load->view('s_header', $dados);
-		$this->load->view('s_usuario_cadastro', $dados);
+		$this->load->view('s_cliente_cadastro', $dados);
 		$this->load->view('s_footer');
     }
     
     //PÁGINA DE CADASTRO DE ACESSO AO SISTEMA DO USUÁRIO
-	public function CadastrarAcessoDoUsuario() {
+	public function CadastraPet() {
 		$msg = null;
 		if ($this->session->flashdata('Success') !="") {
 			$msg = $this->session->flashdata('Success');
@@ -64,10 +64,10 @@ class Cliente extends CI_Controller {
 			$msg = $this->session->flashdata('Error');
 		}
 
-		$dados = array('title' => 'Cadastrar Acesso do Usuário - Sistema de Petshop e Clínica Veterinária', 'msg' => $msg);
+		$dados = array('title' => 'Cadastrar Pets - Sistema de Petshop e Clínica Veterinária', 'msg' => $msg);
 
 		$this->load->view('s_header', $dados);
-		$this->load->view('s_usuario_cadastro_acesso', $dados);
+		$this->load->view('s_cliente_cadastro_pet', $dados);
 		$this->load->view('s_footer');
     }
     

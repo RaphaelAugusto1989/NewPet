@@ -65,7 +65,7 @@ class Newpet extends CI_Controller {
 			$this->session->set_userdata('idUsuario', $user[0]->id_usuario);
 			$this->session->set_userdata('nome', $user[0]->nome_usuario);
 
-			redirect(site_url('Sistema'));
+			redirect(site_url('Newpet/Home'));
 		} else {
 			$msg = $this->session->flashdata('Error', 'Login ou Senha incorreto!');
 			redirect(site_url('index'));
@@ -91,7 +91,7 @@ class Newpet extends CI_Controller {
 
 	//PÁGINA DE RECUPERAÇÃO DE SENHA
 	public function Home() {
-		$dados = array('title' => 'Sistema NewPet- Sistema de Petshop e Clínica Veterinária', 'msg' => $msg);
+		$dados = array('title' => 'Sistema NewPet- Sistema de Petshop e Clínica Veterinária');
 
 		$this->load->view('s_header', $dados);
 		$this->load->view('s_home', $dados);

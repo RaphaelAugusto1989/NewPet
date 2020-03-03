@@ -86,4 +86,36 @@ class Usuario extends CI_Controller {
 		$this->load->view('s_usuario_planos', $dados);
 		$this->load->view('s_footer');
 	}
+
+	//PÁGINA DOS DADOS DO USUÁRIO DO SISTEMA
+	public function MeusDados() {
+		$msg = null;
+		if ($this->session->flashdata('Success') !="") {
+			$msg = $this->session->flashdata('Success');
+		} else {
+			$msg = $this->session->flashdata('Error');
+		}
+
+		$dados = array('title' => 'Meus Dados - Sistema de Petshop e Clínica Veterinária', 'msg' => $msg);
+
+		$this->load->view('s_header', $dados);
+		$this->load->view('s_usuario_meus_dados', $dados);
+		$this->load->view('s_footer');
+	}
+
+	//PÁGINA DE CADASTRO DE ACESSO AO SISTEMA DO USUÁRIO
+	public function MeusDadosDeAcesso() {
+		$msg = null;
+		if ($this->session->flashdata('Success') !="") {
+			$msg = $this->session->flashdata('Success');
+		} else {
+			$msg = $this->session->flashdata('Error');
+		}
+
+		$dados = array('title' => 'Meus Dados De Acesso - Sistema de Petshop e Clínica Veterinária', 'msg' => $msg);
+
+		$this->load->view('s_header', $dados);
+		$this->load->view('s_usuario_meu_dados_acesso.php', $dados);
+		$this->load->view('s_footer');
+    }
 }

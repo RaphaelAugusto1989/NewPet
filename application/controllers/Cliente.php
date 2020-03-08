@@ -51,7 +51,7 @@ class Cliente extends CI_Controller {
 		$dados = array('title' => 'Cadastrar Cliente - Sistema de Petshop e Clínica Veterinária', 'msg' => $msg);
 
 		$this->load->view('s_header', $dados);
-		$this->load->view('s_cliente_cadastro', $dados);
+		$this->load->view('s_cliente_cadastra_altera', $dados);
 		$this->load->view('s_footer');
     }
     
@@ -67,23 +67,7 @@ class Cliente extends CI_Controller {
 		$dados = array('title' => 'Cadastrar Pets - Sistema de Petshop e Clínica Veterinária', 'msg' => $msg);
 
 		$this->load->view('s_header', $dados);
-		$this->load->view('s_cliente_cadastro_pet', $dados);
+		$this->load->view('s_cliente_cadastra_altera_pet', $dados);
 		$this->load->view('s_footer');
     }
-    
-    //PÁGINA DOS PLANOS DO SISTEMA DO USUÁRIO
-	public function PlanoDoUsuario() {
-		$msg = null;
-		if ($this->session->flashdata('Success') !="") {
-			$msg = $this->session->flashdata('Success');
-		} else {
-			$msg = $this->session->flashdata('Error');
-		}
-
-		$dados = array('title' => 'Plano do Usuário - Sistema de Petshop e Clínica Veterinária', 'msg' => $msg);
-
-		$this->load->view('s_header', $dados);
-		$this->load->view('s_usuario_planos', $dados);
-		$this->load->view('s_footer');
-	}
 }

@@ -51,7 +51,7 @@ class Produto extends CI_Controller {
 		$dados = array('title' => 'Cadastrar Produto - Sistema de Petshop e Clínica Veterinária', 'msg' => $msg);
 
 		$this->load->view('s_header', $dados);
-		$this->load->view('s_produto_cadastro', $dados);
+		$this->load->view('s_produto_cadastra_altera', $dados);
 		$this->load->view('s_footer');
     }
 }

@@ -51,7 +51,7 @@ class Usuario extends CI_Controller {
 		$dados = array('title' => 'Cadastro de Usuário - Sistema de Petshop e Clínica Veterinária', 'msg' => $msg);
 
 		$this->load->view('s_header', $dados);
-		$this->load->view('s_usuario_cadastro', $dados);
+		$this->load->view('s_usuario_cadastra_altera', $dados);
 		$this->load->view('s_footer');
     }
     
@@ -67,7 +67,7 @@ class Usuario extends CI_Controller {
 		$dados = array('title' => 'Cadastrar Acesso do Usuário - Sistema de Petshop e Clínica Veterinária', 'msg' => $msg);
 
 		$this->load->view('s_header', $dados);
-		$this->load->view('s_usuario_cadastro_acesso', $dados);
+		$this->load->view('s_usuario_cadastra_altera_acesso', $dados);
 		$this->load->view('s_footer');
     }
     
@@ -83,7 +83,7 @@ class Usuario extends CI_Controller {
 		$dados = array('title' => 'Plano do Usuário - Sistema de Petshop e Clínica Veterinária', 'msg' => $msg);
 
 		$this->load->view('s_header', $dados);
-		$this->load->view('s_usuario_planos', $dados);
+		$this->load->view('s_usuario_cadastra_altera_planos', $dados);
 		$this->load->view('s_footer');
 	}
 
@@ -99,7 +99,7 @@ class Usuario extends CI_Controller {
 		$dados = array('title' => 'Meus Dados - Sistema de Petshop e Clínica Veterinária', 'msg' => $msg);
 
 		$this->load->view('s_header', $dados);
-		$this->load->view('s_usuario_meus_dados', $dados);
+		$this->load->view('s_usuario_visualiza_altera_meus_dados', $dados);
 		$this->load->view('s_footer');
 	}
 
@@ -115,7 +115,7 @@ class Usuario extends CI_Controller {
 		$dados = array('title' => 'Meus Dados De Acesso - Sistema de Petshop e Clínica Veterinária', 'msg' => $msg);
 
 		$this->load->view('s_header', $dados);
-		$this->load->view('s_usuario_meu_dados_acesso.php', $dados);
+		$this->load->view('s_usuario_visualiza_altera_meus_dados_acesso.php', $dados);
 		$this->load->view('s_footer');
     }
 }

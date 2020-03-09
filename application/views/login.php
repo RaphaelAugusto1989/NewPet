@@ -1,16 +1,16 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 <div class="container-fluid">
     <div class="row ">
-        <div class="col-lg-4"></div>
-        <div class="col-lg-4"></div>
-        <div class="col-lg-4 text-center p-4 login">
+        <div class="col-4"></div>
+        <div class="col-4"></div>
+        <div class="col-4 text-center p-4 login">
             <form action="Newpet/AutenticaLogin" method="POST">
                 <div class="form-row align-intems-center">
-                    <div class="col-lg-10 mb-4 text-left">
+                    <div class="col-10 mb-4 text-left">
                         <img src="<?= base_url('assets/img/logo-newpet-azul.png');?>" alt="Logo NewPet">
                     </div>
-                    <div class="col-lg-2"></div>
-                    <div class="col-lg-10 mb-3">
+                    <div class="col-2"></div>
+                    <div class="col-10 mb-3">
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <div class="input-group-text border border-right-0 border-primary bg-light text-primary">
@@ -21,8 +21,8 @@
                         </div>
                         <small class="form-text text-muted text-left">*Inserir CPF ou CNPJ sem pontos, traço e barra!</small>
                     </div>
-                    <div class="col-lg-2"></div>
-                    <div class="col-lg-10 mb-3">
+                    <div class="col-2"></div>
+                    <div class="col-10 mb-3">
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <div class="input-group-text border border-right-0 border-primary bg-light text-primary">
@@ -35,19 +35,23 @@
 		          			</div>
                         </div>
                     </div>
-                    <div class="col-lg-2"></div>
-                    <div class="col-lg-10 mb-4 text-right">
+                    <div class="col-2">
+                    </div>
+                    <div class="col-4">
+                    <span id="msgCapsLock" class="text-left text-danger" style="display: none;">*Caps Lock Ativado!</span>
+                    </div>
+                    <div class="col-6 mb-4 text-right">
                         <button type="submit" class="btn btn-primary"> Entrar <i class="fas fa-sign-in-alt"></i></button>
                     </div>
-                    <div class="col-lg-2"></div>
-                    <div class="col-lg-10 mb-1 text-left">
+                    <div class="col-2"> </div>
+                    <div class="col-10 mb-1 text-left">
                         <a href="EsqueciMinhaSenha">Esqueceu sua senha?</a>
                     </div>
-                    <div class="col-lg-2"></div>
-                    <div class="col-lg-10 mb-1 text-left">
+                    <div class="col-2"></div>
+                    <div class="col-10 mb-1 text-left">
                         <a href="PrecisaDeAjuda">Precisa de ajuda?</a>
                     </div>
-                    <div class="col-lg-2"></div>
+                    <div class="col-2"></div>
                 </div>
             </form>
         </div>

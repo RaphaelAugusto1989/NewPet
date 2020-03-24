@@ -29,17 +29,17 @@
                 <h5 class="text-primary"> Dados Pessoais</h5>
             </div>
         </div>
-        <form action="" method="post">
+        <form action="<?= site_url('Usuario/GravaDadosPessoaisUsuario')?>" method="post">
             <div class="form-row">
                 <div class="col-lg-1">
                     <div class="custom-control custom-radio">
-                        <input type="radio" class="custom-control-input checkradio" id="checkedcpf" name="check" doc="cpf" checked>
+                        <input type="radio" class="custom-control-input checkradio" id="checkedcpf" name="check" doc="cpf" value="1" checked>
                         <label class="custom-control-label" for="checkedcpf"> CPF</label>
                     </div>
                 </div>
                 <div class="col-lg-2" >
                     <div class="custom-control custom-radio">
-                        <input type="radio" class="custom-control-input checkradio" id="checkedcnpj" name="check" doc="cnpj">
+                        <input type="radio" class="custom-control-input checkradio" id="checkedcnpj" name="check" doc="cnpj" value="2">
                         <label class="custom-control-label" for="checkedcnpj"> CNPJ</label>
                     </div>
                 </div>
@@ -50,24 +50,24 @@
                 <div class="form-row">
                     <div class="col-lg-4">
                         <label for="cpfcnpj" class="mb-0 mt-2">CPF:</label>
-                        <input type="text" name="cpforcnpj" class="form-control cpf" id="" placeholder="000.000.000-00">
+                        <input type="text" name="cpf" class="form-control cpf" id="" placeholder="000.000.000-00">
                     </div>
                     <div class="col-lg-8"></div>
                 </div> 
                 <div class="form-row">
                     <div class="col-lg-12">
                         <label for="" class="mb-0 mt-2">Nome Completo:</label>
-                        <input type="text" name="" class="form-control" id="" placeholder="Nome do usuário ou nome da empresa">
+                        <input type="text" name="nome" class="form-control" id="" maxlength="500" placeholder="Nome Completo do Usuário">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="col-lg-4">
                         <label for="nascimento" class="mb-0 mt-2">Data de Nascimento:</label>
-                        <input type="text" name="nascimento data" class="form-control data" id="" placeholder="00/00/0000">
+                        <input type="text" name="nascimento" class="form-control data" id="" placeholder="00/00/0000">
                     </div>
                     <div class="col-lg-8">
                         <label for="email" class="mb-0 mt-2">E-mail:</label>
-                        <input type="email" name="email" class="form-control" id="" placeholder="E-mail de contato">
+                        <input type="email" name="email" class="form-control" id="" maxlength="200" placeholder="E-mail de contato">
                     </div>
                 </div> 
             </div>
@@ -77,26 +77,26 @@
                 <div class="form-row">
                     <div class="col-lg-4">
                         <label for="cpfcnpj" class="mb-0 mt-2">CNPJ:</label>
-                        <input type="text" name="cpforcnpj" class="form-control cnpj" id=""  placeholder="00.000.000/0000-00">
+                        <input type="text" name="cnpj" class="form-control cnpj" id=""  placeholder="00.000.000/0000-00">
                     </div>
                     <div class="col-lg-8"></div>
                 </div> 
                 <div class="form-row">
                     <div class="col-lg-12">
                         <label for="" class="mb-0 mt-2">Nome da Empresa:</label>
-                        <input type="text" name="" class="form-control" id="" placeholder="Nome da empresa">
+                        <input type="text" name="empresa" class="form-control" id="" maxlength="300" placeholder="Nome da empresa">
                     </div>
                 </div> 
                 <div class="form-row">
                     <div class="col-lg-12">
                         <label for="" class="mb-0 mt-2">Responsável:</label>
-                        <input type="text" name="" class="form-control" id="" placeholder="Nome do Responsável">
+                        <input type="text" name="responsavel" class="form-control" id="" maxlength="300" placeholder="Nome do Responsável">
                     </div>
                 </div> 
                 <div class="form-row">
                     <div class="col-lg-12">
                         <label for="email" class="mb-0 mt-2">E-mail:</label>
-                        <input type="email" name="email" class="form-control" id="" placeholder="E-mail de contato">
+                        <input type="email" name="email" class="form-control" id="" maxlength="200" placeholder="E-mail de contato">
                     </div>
                 </div>
             </div>
@@ -135,7 +135,7 @@
             <div class="form-row">
                 <div class="col-lg-3">
                     <label class="mb-0 mt-2">Número:</label>
-                    <input type="text" name="numero" class="form-control" id="" placeholder="" onkeypress="return somenteNumeros(event)">
+                    <input type="text" name="numero" class="form-control" id="" placeholder="" maxlength="5" onkeypress="return somenteNumeros(event)">
                 </div>
                 <div class="col-lg-9">
                     <label class="mb-0 mt-2">Cidade:</label>
@@ -149,13 +149,13 @@
                 </div>
                 <div class="col-lg-2">
                     <label class="mb-0 mt-2">UF:</label>
-                    <input type="text" name="estado" class="form-control" id="uf" placeholder="UF">
+                    <input type="text" name="estado" class="form-control" id="uf"  maxlength="2" placeholder="UF">
                 </div>
             </div>
             <div class="form-row">
                 <div class="col-lg-12">
                     <label for="" class="mb-0 mt-2">Complemento:</label>
-                    <input type="text" name="complemento" class="form-control" id="" placeholder="Complemento">
+                    <input type="text" name="complemento" class="form-control" id="" maxlength="500" placeholder="Complemento">
                 </div>
             </div>
             <div class="form-row">
@@ -163,7 +163,7 @@
                     <!-- SE NÃO EXISTIR DADOS CADASTRADOS, MOSTRAR BOTÃO SALVAR -->
                     <button type="submit" class="btn btn-primary padbutton"><i class="fas fa-save mr-2"></i> Salvar</button>
                     <!-- SE EXISTIR DADOS CADASTRADOS, MOSTRAR BOTÃO ALTERAR -->
-                    <button type="submit" class="btn btn-primary padbutton"><i class="fas fa-edit mr-2"></i> Alterar</button>
+                    <!-- <button type="submit" class="btn btn-primary padbutton"><i class="fas fa-edit mr-2"></i> Alterar</button> -->
                     <!-- SE MSG FOR TRUE MOSTRAR BOTÃO PRÓXIMO -->
                     <a href="<?= site_url('Usuario/CadastrarAcessoDoUsuario'); ?>" class="btn btn-success padbutton"> Próximo <i class="fas fa-arrow-right ml-2"></i></a>
                 </div>

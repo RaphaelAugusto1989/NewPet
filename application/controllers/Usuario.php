@@ -53,7 +53,63 @@ class Usuario extends CI_Controller {
 		$this->load->view('s_header', $dados);
 		$this->load->view('s_usuario_cadastra_altera', $dados);
 		$this->load->view('s_footer');
-    }
+	}
+	
+	//FUNÇÃO GRAVA DADOS PESSOAIS DO USUÁRIO NO SISTEMA
+	public function GravaDadosPessoaisUsuario() {
+
+		//CHECKBOK FOR IGUAL A 1 É CPF, IGUAL A 2 É CNPJ
+		$checkbox = $this->input->post('check');
+
+			if ($checkbox == '1') {  //CPF
+				$Grava = array (
+					'cpf_cnpj_usuario' => $this->input->post('cpf'),
+					'nome_empresa_usuario' => $this->input->post('nome'),
+					'nascimento_usuario' => $this->input->post('nascimento'),
+					'email_usuario' => $this->input->post('email'),
+					'fixo_usuario' => $this->input->post('fixo'),
+					'celular_usuario' => $this->input->post('celular'),
+					'cep_usuario' => $this->input->post('cep'),
+					'rua_usuario' => $this->input->post('rua'),
+					'num_usuario' => $this->input->post('numero'),
+					'bairro_usuario' => $this->input->post('bairro'),
+					'cidade_usuario' => $this->input->post('cidade'),
+					'estado_usuario' => $this->input->post('estado'),
+					'complemento_usuario' => $this->input->post('complemento'),
+				);
+			} else { //CNPJ
+				$Grava = array (
+					'cpf_cnpj_usuario' => $this->input->post('cnpj'),
+					'nome_empresa_usuario' => $this->input->post('empresa'),
+					'responsavel_empresa_usuario' => $this->input->post('responsavel'),
+					'email_usuario' => $this->input->post('email'),
+					'fixo_usuario' => $this->input->post('fixo'),
+					'celular_usuario' => $this->input->post('celular'),
+					'cep_usuario' => $this->input->post('cep'),
+					'rua_usuario' => $this->input->post('rua'),
+					'num_usuario' => $this->input->post('numero'),
+					'bairro_usuario' => $this->input->post('bairro'),
+					'cidade_usuario' => $this->input->post('cidade'),
+					'estado_usuario' => $this->input->post('estado'),
+					'complemento_usuario' => $this->input->post('complemento'),
+				);
+			}
+
+		
+
+		$this->load->model('Usuario_model');
+		$i = $this->Usuario_model->GravaDadosUsuario($Grava);
+		echo '<pre>';
+		print_r($i); exit;
+
+		if(!empty($i)) {
+			//$this->session->set_flashdata('Success', 'Banner Cadastrado com Sucesso');
+            redirect(site_url('Usuario/CadastrarAcessoDoUsuario'));
+		} else {
+            $this->session->set_flashdata('Error', 'Ocorreu algum problema, verifique os dados e tente novamente!');
+            redirect(site_url('CadastroDeUsuario'));
+		}
+	}
     
     //PÁGINA DE CADASTRO DE ACESSO AO SISTEMA DO USUÁRIO
 	public function CadastrarAcessoDoUsuario() {
@@ -69,6 +125,36 @@ class Usuario extends CI_Controller {
 		$this->load->view('s_header', $dados);
 		$this->load->view('s_usuario_cadastra_altera_acesso', $dados);
 		$this->load->view('s_footer');
+	}
+	
+	//PÁGINA DE CADASTRO DE ACESSO AO SISTEMA DO USUÁRIO
+	public function GravaDadosAcessoDoUsuario() {
+		$Grava = array (
+			'cpf_cnpj_usuario' => $this->input->post('cpf'),
+			'nome_empresa_usuario' => $this->input->post('nome'),
+			'nascimento_usuario' => $this->input->post('nascimento'),
+			'email_usuario' => $this->input->post('email'),
+			'fixo_usuario' => $this->input->post('fixo'),
+			'celular_usuario' => $this->input->post('celular'),
+			'cep_usuario' => $this->input->post('cep'),
+			'rua_usuario' => $this->input->post('rua'),
+			'num_usuario' => $this->input->post('numero'),
+			'bairro_usuario' => $this->input->post('bairro'),
+			'cidade_usuario' => $this->input->post('cidade'),
+			'estado_usuario' => $this->input->post('estado'),
+			'complemento_usuario' => $this->input->post('complemento'),
+		);
+
+		$this->load->model('Usuario_model');
+		$i = $this->Usuario_model->GravaAcessoUsuario($Grava);
+
+		if(!empty($i)) {
+			//$this->session->set_flashdata('Success', 'Banner Cadastrado com Sucesso');
+            redirect(site_url('Usuario/CadastrarAcessoDoUsuario'));
+		} else {
+            $this->session->set_flashdata('Error', 'Ocorreu algum problema, verifique os dados e tente novamente!');
+            redirect(site_url('CadastroDeUsuario'));
+		}
     }
     
     //PÁGINA DOS PLANOS DO SISTEMA DO USUÁRIO

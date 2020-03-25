@@ -32,6 +32,9 @@ class Usuario extends CI_Controller {
 		} else {
 			$msg = $this->session->flashdata('Error');
 		}
+		
+		$this->load->model('Usuario_model');
+		$i = $this->Usuario_model->GravaAcessoUsuario();
 
 		$dados = array('title' => 'Usuários Cadastrados - Sistema de Petshop e Clínica Veterinária', 'msg' => $msg);
 
@@ -48,6 +51,16 @@ class Usuario extends CI_Controller {
 		} else {
 			$msg = $this->session->flashdata('Error');
 		}
+
+		$id = null;
+		if ($this->uri->segment(3) != "") {
+			$id = $this->uri->segment(3);
+
+			$this->load->model('Usuario_model');
+			$i = $this->Usuario_model->GravaAcessoUsuario($id);
+		}
+
+		
 
 		$dados = array('title' => 'Cadastro de Usuário - Sistema de Petshop e Clínica Veterinária', 'msg' => $msg);
 
@@ -164,11 +177,8 @@ class Usuario extends CI_Controller {
 			'tipo_usuario' => $this->input->post('perfil'),
 			'status_usuario' => $Status,
 			'img_usuario' => $this->input->post('logo'),
-			'create_usuario' => date('Y-m-d H:m:s'),
+			'create_usuario' => date('Y-m-d H:i:s'),
 		);
-
-		// echo "<pre>";
-		// print_r($Grava); exit;
 
 		$this->load->model('Usuario_model');
 		$i = $this->Usuario_model->GravaAcessoUsuario($id, $Grava);

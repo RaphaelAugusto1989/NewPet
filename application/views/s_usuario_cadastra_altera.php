@@ -126,7 +126,7 @@
             <div class="form-row">
                 <div class="col-lg-4">
                     <label class="mb-0 mt-2">CEP:</label>
-                    <input type="text" name="cep" class="form-control cep" id="cep" placeholder="00.000-000">
+                    <input type="text" name="cep" class="form-control cep" id="cep" placeholder="00.000-000" required>
                 </div>
                 <div class="col-lg-8"></div>
             </div> 

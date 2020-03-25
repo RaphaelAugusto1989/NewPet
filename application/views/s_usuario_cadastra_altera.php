@@ -26,6 +26,13 @@
     <div class="col-8">   
         <div class="row">
             <div class="col-lg-12 pt-2">
+                <?php
+                    if ($this->session->flashdata('Success') !="") {
+                        echo "<p class='alert alert-success text-center'><i class='fas fa-check-circle'></i> " .$msg. "</p>";
+                    } elseif ($this->session->flashdata('Error') !="") {
+                        echo "<p class='alert alert-danger text-center'><i class='fas fa-exclamation-circle'></i> " .$msg. "</p>";
+                    }
+                ?>
                 <h5 class="text-primary"> Dados Pessoais</h5>
             </div>
         </div>
@@ -67,7 +74,7 @@
                     </div>
                     <div class="col-lg-8">
                         <label for="email" class="mb-0 mt-2">E-mail:</label>
-                        <input type="email" name="email" class="form-control" id="" maxlength="200" placeholder="E-mail de contato">
+                        <input type="email" name="email_usuario" class="form-control" id="" maxlength="200" placeholder="E-mail de contato">
                     </div>
                 </div> 
             </div>
@@ -96,7 +103,7 @@
                 <div class="form-row">
                     <div class="col-lg-12">
                         <label for="email" class="mb-0 mt-2">E-mail:</label>
-                        <input type="email" name="email" class="form-control" id="" maxlength="200" placeholder="E-mail de contato">
+                        <input type="email" name="email_empresa" class="form-control" id="" maxlength="200" placeholder="E-mail de contato">
                     </div>
                 </div>
             </div>

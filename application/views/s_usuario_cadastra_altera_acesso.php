@@ -29,17 +29,18 @@
                 <h5 class="text-primary"> Dados de Acesso</h5>
             </div>
         </div>
-        <form action="" method="post">
+        <form action="<?= site_url('Usuario/GravaDadosAcessoDoUsuario')?>" method="post">
             <div class="form-group">
+                <input type="hidden" name="id" value="<?= $id; ?>">
                 <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="customFile">
+                    <input type="file" name="logo" class="custom-file-input" id="customFile">
                     <label class="custom-file-label" for="customFile">Logo do Usuário:</label>
                 </div>
             </div>
             <div class="form-row">
                 <div class="col-lg-12">
                     <label for="" class="mb-0 mt-2">Login:</label>
-                    <input type="text" name="" class="form-control" id="" placeholder="Login do Usuário">
+                    <input type="text" name="login" class="form-control" id="" placeholder="Login do Usuário">
                 </div>
             </div>
             <div class="form-row align-items-center">
@@ -59,19 +60,19 @@
             <div class="form-row">
                 <div class="col-10">
                     <label for="email" class="mb-0 mt-2">Perfil do Usuário:</label>
-                    <select name="" class="form-control custom-select" id="">
+                    <select name="perfil" class="form-control custom-select" id="">
                         <option selected disable> -- </option>
-                        <option value=""> *Administrador do Sistema</option>
-                        <option value=""> *Consultor do Sistema</option>
-                        <option value=""> Clinica Veterinária</option>
-                        <option value=""> PetShop</option>
-                        <option value=""> Personalizado</option>
+                        <option value="1"> *Administrador do Sistema</option>
+                        <option value="2"> *Consultor do Sistema</option>
+                        <option value="3"> Clinica Veterinária</option>
+                        <option value="4"> PetShop</option>
+                        <option value="5"> Personalizado</option>
                     </select>
                 </div>
                 <div class="col-2">
                     <label class="mb-0 mt-2 mb-2">Status:</label>
                     <div class="custom-control custom-switch">
-                        <input type="checkbox" class="custom-control-input" id="ativo">
+                        <input type="checkbox" name="status" class="custom-control-input" value="1" id="ativo">
                         <label class="custom-control-label" for="ativo">
                             <span id="ativado" style="display: none;">Ativado</span>
                             <span id="desativado">Desativado</span>
@@ -172,7 +173,7 @@
                     <!-- SE NÃO EXISTIR DADOS CADASTRADOS, MOSTRAR BOTÃO SALVAR -->
                     <button type="submit" class="btn btn-primary padbutton"><i class="fas fa-save mr-2"></i> Salvar</button>
                     <!-- SE EXISTIR DADOS CADASTRADOS, MOSTRAR BOTÃO ALTERAR -->
-                    <button type="submit" class="btn btn-primary padbutton"><i class="fas fa-edit mr-2"></i> Alterar</button>
+                    <!-- <button type="submit" class="btn btn-primary padbutton"><i class="fas fa-edit mr-2"></i> Alterar</button> -->
                     <!-- SE MSG FOR TRUE MOSTRAR BOTÃO PRÓXIMO -->
                     <a href="<?= site_url('Usuario/PlanoDoUsuario'); ?>" class="btn btn-success padbutton"> Próximo <i class="fas fa-arrow-right ml-2"></i></a>
                 </div>

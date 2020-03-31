@@ -1,8 +1,39 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
-<div class="row">         
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); 
+
+$idUsuario = 0;
+// $display_cpf = $cpfcnpj = $nome = $nasc = $email = $responsavel = $fixo = $celular = $cep = $rua = $num = $cidade = $bairro = $estado = $complemento = $tam = null;
+
+$titulo = "CADASTRO DO USUÁRIO";
+
+if(!empty($user)){
+    $titulo = "ALTERAR DADOS DO USUÁRIO";
+        
+    foreach($user as $i => $us) {
+        // $data = explode("-", $user[$i]->nascimento_usuario);
+
+        // $idUsuario = $user[$i]->id_usuario;
+        // $cpfcnpj = $user[$i]->cpf_cnpj_usuario;
+        // $nome = $user[$i]->nome_empresa_usuario;
+        // $nasc = $data[2].'/'.$data[1].'/'.$data[0];
+        // $email = $user[$i]->email_usuario;
+        // $responsavel = $user[$i]->responsavel_empresa_usuario;
+        // $fixo = $user[$i]->fixo_usuario;
+        // $celular = $user[$i]->celular_usuario;
+        // $cep = $user[$i]->cep_usuario;
+        // $rua = $user[$i]->rua_usuario; 
+        // $num = $user[$i]->num_usuario;
+        // $cidade = $user[$i]->cidade_usuario;
+        // $bairro = $user[$i]->bairro_usuario;
+        // $estado = $user[$i]->estado_usuario;
+        // $complemento = $user[$i]->complemento_usuario;
+    }
+}
+
+?>
+<div class="row pt-3">         
     <div class="col-3"></div>
     <div class="col-8 text-center">
-        <h3 class="text-center">Cadastro de Usuário</h3>
+        <h3 class="text-center"><?= $titulo ?></h3>
     </div>
     <div class="pr-0 mr-0 col-1"></div>
 </div>
@@ -33,8 +64,8 @@
             <div class="form-group">
                 <input type="hidden" name="id" value="<?= $id; ?>">
                 <div class="custom-file">
-                    <input type="file" name="logo" class="custom-file-input" id="customFile">
-                    <label class="custom-file-label" for="customFile">Logo do Usuário:</label>
+                    <input type="file" name="logo" class="custom-file-input" id="customFile" accept="image/*">
+                    <label class="custom-file-label" for="customFile"></label>
                 </div>
             </div>
             <div class="form-row">
@@ -54,7 +85,7 @@
                     </div>
                 </div>
                 <div class="col-2 pt-4">
-                    <a href="" class="btn btn-outline-warning mt-2"> Gerar Senha</a>
+                    <a href="javascript:geraPassword(this);" class="btn btn-outline-warning mt-2"><i class="fas fa-key"></i>  Gerar Senha</a>
                 </div>
             </div>
             <div class="form-row">
@@ -166,7 +197,12 @@
                         <label class="custom-control-label" for="customControlAutosizing">Relatórios do Sistema</label>
                     </div>
                 </div>
-                <div class="col"> </div>
+                <div class="col">
+                    <div class="custom-control custom-checkbox mr-sm-2"> </div>
+                </div>
+                <div class="col">
+                    <div class="custom-control custom-checkbox mr-sm-2"> </div>
+                </div>
             </div>
             <div class="form-row">
                 <div class="col-lg-12 mt-3 mb-4 pb-4 text-right">

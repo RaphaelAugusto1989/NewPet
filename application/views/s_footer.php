@@ -185,5 +185,42 @@
             }
         }
     }
+
+    //GERA PASSWORD AUTOMATICAMENTE
+    function geraPassword() {
+        var pass = "";
+        var chars = 8; //Número de caracteres da senha
+
+        generate = function(chars) {
+            for (var i= 0; i < chars; i++) {
+                pass = pass + getRandomChar();
+            }
+            document.getElementById("password").value = pass;
+            //$("#senha").val(pass);
+        }
+        
+        this.getRandomChar = function() {
+            var ascii = [[48, 57],[97,122]];
+            var i = Math.floor(Math.random()*ascii.length);
+            return String.fromCharCode(Math.floor(Math.random()*(ascii[i][1]-ascii[i][0]))+ascii[i][0]);
+        }
+        generate(chars);
+    }
+    
+    //FUNÇÃO OCULTAR E EXIBIR SENHA
+    $(document).ready(function(){
+        $('#showPassword').on('click', function(){
+            var passwordField = $('#password');
+            var passwordFieldType = passwordField.attr('type');
+            if(passwordFieldType == 'password') {
+                passwordField.attr('type', 'text');
+                $(this).html('<i class="fas fa-eye-slash"></i>');
+            } else {
+                passwordField.attr('type', 'password');
+                $(this).html('<i class="fas fa-eye"></i>');
+            }
+        });
+    });
+
 </script>
 </html>

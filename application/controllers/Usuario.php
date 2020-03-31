@@ -32,11 +32,24 @@ class Usuario extends CI_Controller {
 		} else {
 			$msg = $this->session->flashdata('Error');
 		}
-		
-		$this->load->model('Usuario_model');
-		$i = $this->Usuario_model->GravaAcessoUsuario();
 
-		$dados = array('title' => 'Usuários Cadastrados - Sistema de Petshop e Clínica Veterinária', 'msg' => $msg);
+		$this->load->model('Usuario_model');
+
+		//QTD DE USUÁRIOS COMUNS CADASTRADOS NO SISTEMA
+		$QtdUserCadastrados = $this->Usuario_model->MostraQtdUsuarios();
+		$TotalCadastrados = count($QtdUserCadastrados);
+
+		$ContUsuario = $this->Usuario_model->MostraTodosUsuarios();
+        $QtdReg = 10; //QTD DE REGISTROS A SER MOSTRADO POR PÁGINA
+
+		$pg = isset($_GET["pg"]) ? $_GET["pg"] : 1;
+		$Inicial = ($pg * $QtdReg) - $QtdReg;
+
+		$TotalReg = count($ContUsuario);
+		
+		$lista = $this->Usuario_model->MostraListaUsuarios($Inicial, $QtdReg);
+
+		$dados = array('title' => 'Usuários Cadastrados - Sistema de Petshop e Clínica Veterinária', 'msg' => $msg, 'user' => $lista, 'qtdUser' => $TotalCadastrados);
 
 		$this->load->view('s_header', $dados);
 		$this->load->view('s_usuarios_visualizar', $dados);
@@ -45,6 +58,7 @@ class Usuario extends CI_Controller {
 
 	//PÁGINA DE CADASTRO DO USUÁRIO DO SISTEMA
 	public function CadastroDeUsuario() {
+		$titulo = "CADASTRO DO USUÁRIO";
 		$msg = null;
 		if ($this->session->flashdata('Success') !="") {
 			$msg = $this->session->flashdata('Success');
@@ -53,16 +67,14 @@ class Usuario extends CI_Controller {
 		}
 
 		$id = null;
+		$lista = null;
 		if ($this->uri->segment(3) != "") {
 			$id = $this->uri->segment(3);
-
 			$this->load->model('Usuario_model');
-			$i = $this->Usuario_model->GravaAcessoUsuario($id);
+			$lista = $this->Usuario_model->MostraUsuarioSelecionado($id);
 		}
 
-		
-
-		$dados = array('title' => 'Cadastro de Usuário - Sistema de Petshop e Clínica Veterinária', 'msg' => $msg);
+		$dados = array('title' => 'Cadastro de Usuário - Sistema de Petshop e Clínica Veterinária', 'msg' => $msg, 'user' => $lista, 'title' => $titulo);
 
 		$this->load->view('s_header', $dados);
 		$this->load->view('s_usuario_cadastra_altera', $dados);
@@ -73,9 +85,9 @@ class Usuario extends CI_Controller {
 	public function GravaDadosPessoaisUsuario() {
 		//CHECKBOK FOR IGUAL A 1 É CPF, IGUAL A 2 É CNPJ
 		$checkbox = $this->input->post('check');
-		
+		$id = $this->input->post('id');
+	
 		$this->load->model('Usuario_model');
-
 		$data = explode('/', $this->input->post('nascimento'));
 
 			if ($checkbox == '1') {  //CPF
@@ -131,8 +143,11 @@ class Usuario extends CI_Controller {
 					exit;
 				}
 			}
-
-		$i = $this->Usuario_model->GravaDadosUsuario($Grava);
+		if ($id == '0') {	
+			$i = $this->Usuario_model->GravaDadosUsuario($Grava);
+		} else {
+			$i = $this->Usuario_model->AlteraDadosUsuario($id, $Grava);
+		}
 
 		if(!empty($i)) {
 			//$this->session->set_flashdata('Success', 'Banner Cadastrado com Sucesso');
@@ -146,7 +161,6 @@ class Usuario extends CI_Controller {
     //PÁGINA DE CADASTRO DE ACESSO AO SISTEMA DO USUÁRIO
 	public function CadastrarAcessoDoUsuario() {
 		$id = $this->uri->segment(3);
-
 		$msg = null;
 		if ($this->session->flashdata('Success') !="") {
 			$msg = $this->session->flashdata('Success');
@@ -164,19 +178,42 @@ class Usuario extends CI_Controller {
 	//PÁGINA DE CADASTRO DE ACESSO AO SISTEMA DO USUÁRIO
 	public function GravaDadosAcessoDoUsuario() {
 		$id = $this->input->post('id');
+		$logo = $this->input->post('logo');
 
 		if ($this->input->post('status') == '1') {
 			$Status = $this->input->post('status');
 		} else {
 			$Status = '0';
 		}
+		echo "<pre>";
+		print_r($_FILES['logo']); exit;
+		$config['allowed_types'] = 'gif|jpg|png';
+		$config['max_size'] = 100;
+		$config['max_width'] = 1024;
+		$config['max_height'] = 768;
+		$caminhoCompleto = "assets/img/user_logos/".$_FILES["logo"]["name"];
+        $ext = 'jpg'; //pathinfo($caminhoCompleto, PATHINFO_EXTENSION);
+        $novo_nome = $id."_".date("dmYhis").".".$ext;
+        $caminhoCompleto2 = "assets/img/user_logos/".$novo_nome;
+
+		if(move_uploaded_file($_FILES["logo"]["tmp_name"], $caminhoCompleto)) {
+            if(!rename($caminhoCompleto,  $caminhoCompleto2)) {
+				$this->session->set_flashdata('Error', 'ERRO AO RENOMEAR A IMAGEM DO BANNER!');
+				redirect(site_url('Usuario/CadastrarAcessoDoUsuario/'.$id)); exit;
+               // echo "ERRO AO RENOMEAR A IMAGEM DO BANNER";exit;
+            }
+         } else {
+			$this->session->set_flashdata('Error', 'ERRO AO COPIAR A IMAGEM AO SERVIDOR, ENTRE EM CONTATO COM O RESPONSÁVEL PELO SITE!');
+			redirect(site_url('Usuario/CadastrarAcessoDoUsuario/'.$id)); exit;
+		 }
+
 
 		$Grava = array (
 			'login_usuario' => $this->input->post('login'),
 			'senha_usuario' => md5($this->input->post('password')),
 			'tipo_usuario' => $this->input->post('perfil'),
 			'status_usuario' => $Status,
-			'img_usuario' => $this->input->post('logo'),
+			'img_usuario' => $novo_nome,
 			'create_usuario' => date('Y-m-d H:i:s'),
 		);
 

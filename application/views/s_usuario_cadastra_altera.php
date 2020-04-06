@@ -216,11 +216,11 @@ if(!empty($user)){
                         } else {
                     ?>
                     <button type="submit" class="btn btn-primary padbutton"><i class="fas fa-edit mr-2"></i> Alterar</button>
+                    <!-- SE MSG FOR TRUE MOSTRAR BOTÃO PRÓXIMO -->
+                    <a href="<?= site_url('Usuario/CadastrarAcessoDoUsuario/'.$idUsuario); ?>" class="btn btn-success padbutton"> Próximo <i class="fas fa-arrow-right ml-2"></i></a>
                     <?php 
                       }
                     ?>
-                    <!-- SE MSG FOR TRUE MOSTRAR BOTÃO PRÓXIMO -->
-                    <a href="<?= site_url('Usuario/CadastrarAcessoDoUsuario'); ?>" class="btn btn-success padbutton"> Próximo <i class="fas fa-arrow-right ml-2"></i></a>
                 </div>
             </div>
             

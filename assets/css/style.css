@@ -138,4 +138,13 @@ header {
 }
 /*INICIO CSS LOAD*/
 
+input[type="file"] {
+    height: 44px;
+  }
+
+.thumb {
+height: 60px;
+border: 1px solid #007BFF;
+margin: 10px 5px 0 0;
+}
 

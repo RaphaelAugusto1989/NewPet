@@ -41,16 +41,30 @@ class Usuario_model extends CI_Model {
     }
     
     //INSERE DADOS DO USUARIO NO BANCO DE DADOS
-	public function GravaAcessoUsuario ($id, $Grava) {
+	public function GravaAlteraAcessoUsuario ($id, $Grava) {
         $this->db->where('id_usuario', $id);
 		$this->db->update('np_usuario', $Grava);
 		return TRUE;
 	}
-	
+
+	//ALTERA O USUARIO NO BANCO DE DADOS
+	public function AlteraDadosUsuario ($id, $Grava) {
+		$this->db->where('id_usuario', $id);
+		$this->db->update('np_usuario', $Grava);
+		return TRUE;
+	}
+
 	//MOSTRA USUARIO SELECIONADO CADASTRADO
 	public function MostraUsuarioSelecionado ($id) {
         $this->db->where('id_usuario', $id);
 		return $this->db->get('np_usuario')->result();
+	}
+
+	//EXCLUÍ O USUARIO NO BANCO DE DADOS
+	public function DeletaUsuario ($idUsuario) {
+		$this->db->where('id_usuario', $idUsuario);
+		$this->db->delete('np_usuario');
+		return TRUE;
 	}
 }
 ?>

@@ -58,7 +58,6 @@ class Usuario extends CI_Controller {
 
 	//PÁGINA DE CADASTRO DO USUÁRIO DO SISTEMA
 	public function CadastroDeUsuario() {
-		$titulo = "CADASTRO DO USUÁRIO";
 		$msg = null;
 		if ($this->session->flashdata('Success') !="") {
 			$msg = $this->session->flashdata('Success');
@@ -74,7 +73,7 @@ class Usuario extends CI_Controller {
 			$lista = $this->Usuario_model->MostraUsuarioSelecionado($id);
 		}
 
-		$dados = array('title' => 'Cadastro de Usuário - Sistema de Petshop e Clínica Veterinária', 'msg' => $msg, 'user' => $lista, 'title' => $titulo);
+		$dados = array('title' => 'Cadastro de Usuário - Sistema de Petshop e Clínica Veterinária', 'msg' => $msg, 'user' => $lista);
 
 		$this->load->view('s_header', $dados);
 		$this->load->view('s_usuario_cadastra_altera', $dados);
@@ -90,6 +89,8 @@ class Usuario extends CI_Controller {
 		$this->load->model('Usuario_model');
 		$data = explode('/', $this->input->post('nascimento'));
 
+		
+		if ($id == '0') { //CADASTRA O USUÁRIO
 			if ($checkbox == '1') {  //CPF
 				//VERIFICA SE CPF JÁ FOI CADASTRADO
 				$cpfcnpj = $this->input->post('cpf');
@@ -110,6 +111,7 @@ class Usuario extends CI_Controller {
 						'cidade_usuario' => $this->input->post('cidade'),
 						'estado_usuario' => $this->input->post('estado'),
 						'complemento_usuario' => $this->input->post('complemento'),
+						'create_usuario' => date('Y-m-d H:i:s'),
 					);
 				} else {
 						$this->session->set_flashdata('Error', 'CPF já cadastrado!');
@@ -136,6 +138,7 @@ class Usuario extends CI_Controller {
 						'cidade_usuario' => $this->input->post('cidade'),
 						'estado_usuario' => $this->input->post('estado'),
 						'complemento_usuario' => $this->input->post('complemento'),
+						'create_usuario' => date('Y-m-d H:i:s'),
 					);
 				} else {
 					$this->session->set_flashdata('Error', 'CNPJ já cadastrado!');
@@ -143,15 +146,49 @@ class Usuario extends CI_Controller {
 					exit;
 				}
 			}
-		if ($id == '0') {	
 			$i = $this->Usuario_model->GravaDadosUsuario($Grava);
-		} else {
+		} else { // ALTERA USUARIO
+			if ($checkbox == '1') {  //CPF
+				$Grava = array (
+					'cpf_cnpj_usuario' => $this->input->post('cpf'),
+					'nome_empresa_usuario' => $this->input->post('nome'),
+					'nascimento_usuario' => $data[2].'-'.$data[1].'-'.$data[0] ,
+					'email_usuario' => $this->input->post('email_usuario'),
+					'fixo_usuario' => $this->input->post('fixo'),
+					'celular_usuario' => $this->input->post('celular'),
+					'cep_usuario' => $this->input->post('cep'),
+					'rua_usuario' => $this->input->post('rua'),
+					'num_usuario' => $this->input->post('numero'),
+					'bairro_usuario' => $this->input->post('bairro'),
+					'cidade_usuario' => $this->input->post('cidade'),
+					'estado_usuario' => $this->input->post('estado'),
+					'complemento_usuario' => $this->input->post('complemento'),
+					'alter_usuario' => date('Y-m-d H:i:s'),
+				);
+			} else { //CNPJ
+				$Grava = array (
+					'cpf_cnpj_usuario' => $this->input->post('cnpj'),
+					'nome_empresa_usuario' => $this->input->post('empresa'),
+					'responsavel_empresa_usuario' => $this->input->post('responsavel'),
+					'email_usuario' => $this->input->post('email_empresa'),
+					'fixo_usuario' => $this->input->post('fixo'),
+					'celular_usuario' => $this->input->post('celular'),
+					'cep_usuario' => $this->input->post('cep'),
+					'rua_usuario' => $this->input->post('rua'),
+					'num_usuario' => $this->input->post('numero'),
+					'bairro_usuario' => $this->input->post('bairro'),
+					'cidade_usuario' => $this->input->post('cidade'),
+					'estado_usuario' => $this->input->post('estado'),
+					'complemento_usuario' => $this->input->post('complemento'),
+					'alter_usuario' => date('Y-m-d H:i:s'),
+				);
+			} 
+
 			$i = $this->Usuario_model->AlteraDadosUsuario($id, $Grava);
 		}
 
 		if(!empty($i)) {
-			//$this->session->set_flashdata('Success', 'Banner Cadastrado com Sucesso');
-            redirect(site_url('Usuario/CadastrarAcessoDoUsuario/'.$i));
+            redirect(site_url('Usuario/CadastrarAcessoDoUsuario/'.$id));
 		} else {
             $this->session->set_flashdata('Error', 'Ocorreu algum problema, verifique os dados e tente novamente!');
             redirect(site_url('CadastroDeUsuario'));
@@ -167,8 +204,15 @@ class Usuario extends CI_Controller {
 		} else {
 			$msg = $this->session->flashdata('Error');
 		}
+		
+		// $id = null;
+		$lista = null;
+		if ($this->uri->segment(3) != "") {
+			$this->load->model('Usuario_model');
+			$lista = $this->Usuario_model->MostraUsuarioSelecionado($id);
+		}
 
-		$dados = array('title' => 'Cadastrar Acesso do Usuário - Sistema de Petshop e Clínica Veterinária', 'msg' => $msg, 'id' => $id);
+		$dados = array('title' => 'Cadastrar Acesso do Usuário - Sistema de Petshop e Clínica Veterinária', 'msg' => $msg, 'idUsuario' => $id, 'user' => $lista);
 
 		$this->load->view('s_header', $dados);
 		$this->load->view('s_usuario_cadastra_altera_acesso', $dados);
@@ -177,6 +221,7 @@ class Usuario extends CI_Controller {
 	
 	//PÁGINA DE CADASTRO DE ACESSO AO SISTEMA DO USUÁRIO
 	public function GravaDadosAcessoDoUsuario() {
+		$page = $this->input->post('page');
 		$id = $this->input->post('id');
 		$logo = $this->input->post('logo');
 
@@ -185,28 +230,40 @@ class Usuario extends CI_Controller {
 		} else {
 			$Status = '0';
 		}
-		echo "<pre>";
-		print_r($_FILES['logo']); exit;
-		$config['allowed_types'] = 'gif|jpg|png';
-		$config['max_size'] = 100;
-		$config['max_width'] = 1024;
-		$config['max_height'] = 768;
-		$caminhoCompleto = "assets/img/user_logos/".$_FILES["logo"]["name"];
-        $ext = 'jpg'; //pathinfo($caminhoCompleto, PATHINFO_EXTENSION);
-        $novo_nome = $id."_".date("dmYhis").".".$ext;
-        $caminhoCompleto2 = "assets/img/user_logos/".$novo_nome;
+		
+		if ($logo == "") {
+			$novo_nome = "sem_logo.png";
+		} else {
+			//BUSCA DADOS CADASTRADO NA PÁGINA ANTERIOR
+			$this->load->model('Usuario_model');
+			$lista = $this->Usuario_model->MostraUsuarioSelecionado($id);
 
-		if(move_uploaded_file($_FILES["logo"]["tmp_name"], $caminhoCompleto)) {
-            if(!rename($caminhoCompleto,  $caminhoCompleto2)) {
-				$this->session->set_flashdata('Error', 'ERRO AO RENOMEAR A IMAGEM DO BANNER!');
+			foreach($lista as $l => $user) {
+				$cpf = explode('.',  $lista[$l]->cpf_cnpj_usuario);
+				$cpf2 = explode('-',  $cpf[2]);
+				$cpfcnpj = $cpf[0].$cpf[1].$cpf2[0].$cpf2[1];
+			}
+
+			$config['allowed_types'] = 'jpeg|jpg|png';
+			$config['max_size'] = 100;
+			$config['max_width'] = 1024;
+			$config['max_height'] = 768;
+			$caminhoCompleto = "assets/img/user_logos/".$_FILES["logo"]["name"];
+			$ext = 'jpg'; //pathinfo($caminhoCompleto, PATHINFO_EXTENSION);
+			$novo_nome = $id.$cpfcnpj.date("dmYhis").".".$ext;
+			$caminhoCompleto2 = "assets/img/user_logos/".$novo_nome;
+
+			if(move_uploaded_file($_FILES["logo"]["tmp_name"], $caminhoCompleto)) {
+				if(!rename($caminhoCompleto,  $caminhoCompleto2)) {
+					$this->session->set_flashdata('Error', 'ERRO AO RENOMEAR A IMAGEM DO BANNER!');
+					redirect(site_url('Usuario/CadastrarAcessoDoUsuario/'.$id)); exit;
+				// echo "ERRO AO RENOMEAR A IMAGEM DO BANNER";exit;
+				}
+			} else {
+				$this->session->set_flashdata('Error', 'ERRO AO COPIAR A IMAGEM AO SERVIDOR, ENTRE EM CONTATO COM O RESPONSÁVEL PELO SITE!');
 				redirect(site_url('Usuario/CadastrarAcessoDoUsuario/'.$id)); exit;
-               // echo "ERRO AO RENOMEAR A IMAGEM DO BANNER";exit;
-            }
-         } else {
-			$this->session->set_flashdata('Error', 'ERRO AO COPIAR A IMAGEM AO SERVIDOR, ENTRE EM CONTATO COM O RESPONSÁVEL PELO SITE!');
-			redirect(site_url('Usuario/CadastrarAcessoDoUsuario/'.$id)); exit;
-		 }
-
+			}
+		}
 
 		$Grava = array (
 			'login_usuario' => $this->input->post('login'),
@@ -214,18 +271,27 @@ class Usuario extends CI_Controller {
 			'tipo_usuario' => $this->input->post('perfil'),
 			'status_usuario' => $Status,
 			'img_usuario' => $novo_nome,
-			'create_usuario' => date('Y-m-d H:i:s'),
 		);
 
 		$this->load->model('Usuario_model');
-		$i = $this->Usuario_model->GravaAcessoUsuario($id, $Grava);
+		$i = $this->Usuario_model->GravaAlteraAcessoUsuario($id, $Grava);
 
-		if(!empty($i)) {
-			$this->session->set_flashdata('Success', 'Usuário Cadastrado com Sucesso');
-            redirect(site_url('Usuario/CadastroDeUsuario'));
+		if($page == null) {
+			if(!empty($i)) {
+				$this->session->set_flashdata('Success', 'Usuário Cadastrado com Sucesso');
+				redirect(site_url('Usuario/CadastroDeUsuario/'.$id));
+			} else {
+				$this->session->set_flashdata('Error', 'Ocorreu algum problema, verifique os dados e tente novamente!');
+				redirect(site_url('Usuario/CadastroDeUsuario/'.$id));
+			}
 		} else {
-            $this->session->set_flashdata('Error', 'Ocorreu algum problema, verifique os dados e tente novamente!');
-            redirect(site_url('Usuario/CadastroDeUsuario'));
+			if(!empty($i)) {
+				$this->session->set_flashdata('Success', 'Usuário Alterado com Sucesso');
+				redirect(site_url('Usuario/CadastroDeUsuario/'.$id));
+			} else {
+				$this->session->set_flashdata('Error', 'Ocorreu algum problema, verifique os dados e tente novamente!');
+				redirect(site_url('Usuario/CadastroDeUsuario/'.$id));
+			}
 		}
     }
     
@@ -275,5 +341,21 @@ class Usuario extends CI_Controller {
 		$this->load->view('s_header', $dados);
 		$this->load->view('s_usuario_visualiza_altera_meus_dados_acesso.php', $dados);
 		$this->load->view('s_footer');
-    }
+	}
+	
+	//PÁGINA DE CADASTRO DE ACESSO AO SISTEMA DO USUÁRIO
+	public function ExcluiUsuario() {
+		$idUsuario = $this->uri->segment(3); 
+		
+		$this->load->model('Usuario_model');
+		$true = $this->Usuario_model->DeletaUsuario($idUsuario);
+
+		if ($true == TRUE) {
+			$this->session->set_flashdata('Success', 'Usuário excluído com Sucesso');
+			redirect(site_url('Usuario/UsuariosCadastrados'));
+		} else {
+			$this->session->set_flashdata('Error', 'Ocorreu algum erro ao excluir, verifique e tente novamente!');
+			redirect(site_url('Usuario/UsuariosCadastrados'));
+		}
+	}
 }

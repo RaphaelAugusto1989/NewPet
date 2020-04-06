@@ -222,5 +222,14 @@
         });
     });
 
+    //FUNÇÃO MOSTRAR DADOS NO MODAL EXCLUSÃO
+    $(document).on("click", ".btnExcluir", function(){
+       var id   = $(this).attr("data-id");
+       var nome = $(this).attr("data-nome");
+       
+       $("#recipient-name").html(nome);
+       $("#linkExclusao").attr("href", "./ExcluiUsuario/"+id);
+    })
+
 </script>
 </html>

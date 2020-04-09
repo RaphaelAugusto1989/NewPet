@@ -1,0 +1,11 @@
+[
+    {
+        "nome_empresa_usuario" : "Administrador do Sistema",
+        "email_usuario" : "raphael.a.a.p@gmail.com",
+        "login_usuario" : "administrador",
+        "senha_usuario" : "", 
+        "tipo_usuario" : "1", 
+        "status_usuario" : "1", 
+        "img_usuario" : "" 
+    }
+]

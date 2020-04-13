@@ -7,6 +7,15 @@ class Usuario_model extends CI_Model {
 		parent::__construct();
 	}
 
+	//LOGA O USUARIO NO SISTEMA
+	public function AcessarSistema($login, $Senha) {
+		$this->db->where('email_usuario', $login);
+		$this->db->or_where('login_usuario', $login);
+		$this->db->where('senha_usuario', $Senha);
+		$user = $this->db->get('np_usuario')->result();
+		return $user;
+	}
+
 	//MOSTRA OS USUARIOS CADASTRADOS
 	public function MostraTodosUsuarios() {
 		return $this->db->get('np_usuario')->result();

@@ -10,7 +10,7 @@
                         <img src="<?= base_url('assets/img/logo-newpet-azul.png');?>" alt="Logo NewPet">
                         <?php
                             if ($this->session->flashdata('Error') != "") {
-                                echo "<p class='alert alert-danger text-center'><i class='fas fa-exclamation-circle'></i> " .$msg. "</p>";
+                                echo "<p class='alert alert-danger text-center mt-3'><i class='fas fa-exclamation-circle'></i> " .$msg. "</p>";
                             }
                         ?>
                     </div>

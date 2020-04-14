@@ -1,6 +1,6 @@
 <div class="fixed-bottom rodape">
     <div class="col-lg-12 text-primary">
-        Copyright ©2019 - Sistema NewPet. Todos os direitos reservados. <span class="float-right">versão 1.0.0</span>
+        Copyright ©2020- Sistema NewPet. Todos os direitos reservados. <span class="float-right">versão 1.0.5</span>
     </div>
 </div>
 <script type="text/javascript" src="<?= base_url('assets/js/jquery.js') ?>" charset="utf-8"></script>
@@ -30,6 +30,11 @@
                 $(this).html('<i class="fas fa-eye"></i>');
             }
         });
+
+        $(document).on("keyup", ".cpfRecLogin",function(){
+            var cpf = $(this).val().replace(/[^ 0-9]/g, "");
+            $(this).val(cpf);
+        })
     });
     
     //FUNÇÃO MOSTRA MSG DE CAPSLOCK ATIVADO

@@ -30,7 +30,7 @@
                                     <i class="fas fa-address-card"></i>
                                 </div>
                             </div>
-                            <input type="text" name="cpforcnpj" id="cpfcnpj" class="form-control form-control-lg border border-primary border-left-0" placeholder="CPF ou CNPJ" required>
+                            <input type="text" name="cpforcnpj" id="cpfcnpj" class="cpfRecLogin form-control form-control-lg border border-primary border-left-0" placeholder="CPF ou CNPJ" required>
                         </div>
                         <small class="form-text text-muted text-left">*Inserir CPF ou CNPJ sem pontos, traço e barra!</small>
                     </div>

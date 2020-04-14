@@ -9,6 +9,7 @@ class Usuario_model extends CI_Model {
 
 	//LOGA O USUARIO NO SISTEMA
 	public function AcessarSistema($login, $Senha) {
+
 		$this->db->where('email_usuario', $login);
 		$this->db->or_where('login_usuario', $login);
 		$this->db->where('senha_usuario', $Senha);

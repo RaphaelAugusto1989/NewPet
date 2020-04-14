@@ -5,9 +5,6 @@
 </footer>
 </div><!--FIM DIV CORPO -->
 </body>
-<script type="text/javascript" src="<?= base_url('assets/js/jquery.js') ?>" charset="utf-8"></script>
-<script type="text/javascript" src="<?= base_url('assets/js/bootstrap.js') ?>" charset="utf-8"></script>
-<script type="text/javascript" src="<?= base_url('assets/js/jquery_ui.js') ?>" charset="utf-8"></script>
 <script type="text/javascript" src="<?= base_url('assets/js/jquery_loading.js') ?>" charset="utf-8"></script>
 <script type="text/javascript" src="<?= base_url('assets/js/jquery_mask.js') ?>" charset="utf-8"></script>
 <script type="text/javascript" src="<?= base_url('assets/js/fontawesome_5.12.0.min.js') ?>" charset="utf-8"></script>
@@ -54,6 +51,7 @@
             $('#fone').hide();
         }
     });
+
     //FUNÇÃO MOSTRAR E OCULTAR DIV CPF/CNPJ
     $(document).ready(function(){
         $(document).on("change", ".checkradio", function(){

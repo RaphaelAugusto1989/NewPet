@@ -9,9 +9,11 @@ class Newpet extends CI_Controller {
 
 	//PÁGINA INICIAL DE LOGIN
 	public function index() {
+		
 		$msg = null;
+		#echo'<pre>';print_r($this->session->flashdata());exit;
 		if ($this->session->flashdata('Error')) {
-			echo $msg = $this->session->flashdata('Error');
+			$msg = $this->session->flashdata('Error');
 		}
 
 		$dados = array('title' => 'NewPet - Sistema de Petshop e Clínica Veterinária', 'msg' => $msg);
@@ -56,7 +58,7 @@ class Newpet extends CI_Controller {
 		//ABRE MODEL 
 		$this->load->model('Usuario_model');
 		$db = $this->Usuario_model->AcessarSistema($login, $Senha);
-
+		
 		//ABRE O JSON
 		$userMaster = base_url('assets/js/usermaster.json');
 		$abreJson = file_get_contents($userMaster);
@@ -66,6 +68,7 @@ class Newpet extends CI_Controller {
 			$this->session->set_userdata('timer', time() + (60 * 1)); //1 minuto
 			$this->session->set_userdata('id_user', $db[0]->id_usuario);
 			$this->session->set_userdata('nome_user', $db[0]->nome_empresa_usuario);
+			$this->session->set_userdata('cpfcnpj_user', $db[0]->cpf_cnpj_usuario);
 			$this->session->set_userdata('img_user', $db[0]->img_usuario);
 
 			redirect(site_url('Newpet/Home'));
@@ -75,6 +78,7 @@ class Newpet extends CI_Controller {
 					$this->session->set_userdata('timer', time() + (60 * 1)); //1 minuto
 					$this->session->set_userdata('id_user', $j->id_usuario);
 					$this->session->set_userdata('nome_user', $j->nome_empresa_usuario);
+					$this->session->set_userdata('cpfcnpj_user', $j->cpf_cnpj_usuario);
 					$this->session->set_userdata('img_user', $j->img_usuario);
 
 					redirect(site_url('Newpet/Home'));
@@ -82,17 +86,18 @@ class Newpet extends CI_Controller {
 					$this->session->set_userdata('timer', time() + (60 * 1)); //1 minuto
 					$this->session->set_userdata('id_user', $j->id_usuario);
 					$this->session->set_userdata('nome_user', $j->nome_empresa_usuario);
+					$this->session->set_userdata('cpfcnpj_user', $j->cpf_cnpj_usuario);
 					$this->session->set_userdata('img_user', $j->img_usuario);
 
 					redirect(site_url('Newpet/Home'));
 				} else {
-					$msg = $this->session->flashdata('Error', 'Login ou Senha incorreto!');
-					redirect(site_url('Newpet/index'));
+					$msg = $this->session->set_flashdata('Error', 'Login ou Senha incorreto!');
+					redirect(site_url());
 				}
 			}
 		} else {
-			$msg = $this->session->flashdata('Error', 'Login ou Senha incorreto!');
-			redirect(site_url('Newpet/index'));
+			$msg = $this->session->set_flashdata('Error', 'Login ou Senha incorreto!');
+			redirect(site_url());
 		}
 
 	}
@@ -121,4 +126,12 @@ class Newpet extends CI_Controller {
 		$this->load->view('s_home', $dados);
 		$this->load->view('s_footer');
 	}
+
+	public function Logout() {
+		session_start();
+		$_SESSION = array();
+		session_unset ();
+		session_destroy ();
+		redirect(site_url());
+}
 }

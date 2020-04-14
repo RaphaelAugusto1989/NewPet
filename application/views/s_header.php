@@ -8,6 +8,10 @@
     <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/bootstrap.min.css') ?>">
     <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/jquery_ui.css') ?>">
     <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/style.css') ?>">
+
+    <script type="text/javascript" src="<?= base_url('assets/js/jquery.js') ?>" charset="utf-8"></script>
+    <script type="text/javascript" src="<?= base_url('assets/js/bootstrap.js') ?>" charset="utf-8"></script>
+    <script type="text/javascript" src="<?= base_url('assets/js/jquery_ui.js') ?>" charset="utf-8"></script>
     
     <title><?= $title; ?></title>
 </head>
@@ -53,11 +57,22 @@
         <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
             <li class="nav-item dropdown ">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-user mr-2"></i> NOME DO USUÁRIO
+                    <i class="fas fa-user mr-2"></i> 
+                    <?php  
+                        $nome = explode(' ', $this->session->userdata('nome_user')); 
+
+                        //SE FOR CPF MOSTRA OS 2 PRIMEIROS NOMES
+                        $tam = mb_strlen($this->session->userdata('cpfcnpj_user'), 'utf8');
+                        if ($tam  == '14') {
+                            echo $nome[0].' '.$nome[1]; 
+                        } else {
+                            echo $this->session->userdata('nome_user'); 
+                        }                        
+                    ?>
                 </a>
                 <div class="dropdown-menu mt-2 bg-dark submenu" aria-labelledby="navbarDropdown">
                     <a href="<?= site_url('Usuario/MeusDados');?>" class="dropdown-item pt-2 pb-2"><i class="fas fa-user-cog mr-1"></i> Meus Dados</a>
-                    <a href="#" class="dropdown-item pt-2 pb-2"><i class="fas fa-door-open mr-1"></i> Sair</a>
+                    <a href="<?= site_url('Newpet/Logout');?>" class="dropdown-item pt-2 pb-2"><i class="fas fa-door-open mr-1"></i> Sair</a>
                 </div>
             </li>
         </ul>

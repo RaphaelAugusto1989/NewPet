@@ -4,8 +4,8 @@
         "nome_empresa_usuario" : "Administrador do Sistema",
         "cpf_cnpj_usuario" : "00.000.000/0000-00",
         "email_usuario" : "raphael.a.a.p@gmail.com",
-        "login_usuario" : "administrador",
-        "senha_usuario" : "d243ee28aa5930dea901298cdeb2cb9f",
+        "login_usuario" : "master",
+        "senha_usuario" : "eaf6ff428c26647ae0867a264db48549",
         "tipo_usuario" : "1", 
         "status_usuario" : "1", 
         "img_usuario" : "" 

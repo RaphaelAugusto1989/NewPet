@@ -80,19 +80,30 @@
 <!-- MODAL MENSAGEM EXCLUSÃO -->
 <div class="modal fade" id="modalExcluir" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
+    <div class="modal-content border border-primary">
+      <div class="modal-header border-0">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body border-0 text-center">
-        <h4> Deseja realmente excluir usuário, <br /> <b>"<span id="recipient-name"></span>"</b>? </h4>
+        <h5> Deseja realmente excluir usuário, <br /> <b><span id="recipient-name"></span></b>? </h5>
       </div>
-      <div class="modal-footer align-self-center">
+      <div class="modal-footer align-self-center border-0">
         <a id="linkExclusao" href="#" class="btn btn-primary pl-5 pr-5" >Sim</a>
-        <button type="button" class="btn btn-secondary pl-5 pr-5" data-dismiss="modal">Não</button>
+        <button type="button" class="btn btn-outline-danger pl-5 pr-5" data-dismiss="modal">Não</button>
       </div>
     </div>
   </div>
 </div>
+
+<script>
+    //FUNÇÃO MOSTRAR DADOS NO MODAL EXCLUSÃO
+    $(document).on("click", ".btnExcluir", function(){
+       var id   = $(this).attr("data-id");
+       var nome = $(this).attr("data-nome");
+       
+       $("#recipient-name").html(nome);
+       $("#linkExclusao").attr("href", "./ExcluiUsuario/"+id);
+    })
+</script>

@@ -1,6 +1,6 @@
 <footer class="fixed-bottom bg-primary align-middle">
     <div class="text-white align-middle p-2">
-        <small>Newpet - versão 1.0.1</small>
+        <small>Newpet - versão 1.0.5</small>
     </div>
 </footer>
 </div><!--FIM DIV CORPO -->
@@ -219,15 +219,5 @@
             }
         });
     });
-
-    //FUNÇÃO MOSTRAR DADOS NO MODAL EXCLUSÃO
-    $(document).on("click", ".btnExcluir", function(){
-       var id   = $(this).attr("data-id");
-       var nome = $(this).attr("data-nome");
-       
-       $("#recipient-name").html(nome);
-       $("#linkExclusao").attr("href", "./ExcluiUsuario/"+id);
-    })
-
 </script>
 </html>
